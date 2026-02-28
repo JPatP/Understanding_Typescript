@@ -1,0 +1,1776 @@
+
+================================================================================
+Section 1: Getting Started with TypeScript
+================================================================================
+
+WHAT IS TYPESCRIPT?
+===================
+- A superset of JavaScript that adds static typing and stricter checks
+- Compiles to plain JavaScript before execution
+- Enables catching errors at compile-time instead of runtime
+
+KEY DIFFERENCES FROM JAVASCRIPT
+================================
+Input Field Values
+- ALL values extracted from input fields are strings
+- Examples: input.value, FormData.get()
+- Must convert manually if you need numbers
+
+Operators
+- The * operator (multiplication): numeric-only, forces both operands to numbers
+- The + operator (addition/concatenation): overloaded behavior
+  - If either operand is a string → string concatenation
+  - Otherwise → numeric addition
+- Unary + operator: converts value to number (equivalent to Number(a))
+
+SETUP & INSTALLATION
+====================
+Prerequisites
+- TypeScript cannot run directly in the browser — must compile to JavaScript first
+- TypeScript is a compiled language
+
+Step 1: Install Node.js
+- Download: https://nodejs.org/
+- Includes npm (Node Package Manager) automatically
+
+Step 2: Install TypeScript
+- Global install (recommended for learning):
+  npm install -g typescript
+  - Installs the tsc (TypeScript compiler) command globally
+
+- Local install (recommended for projects):
+  npm init -y
+  npm install --save-dev typescript
+  - Creates tsconfig.json for project configuration
+
+Step 3: Verify Installation
+tsc --version
+node --version
+npm --version
+
+Step 4: Create tsconfig.json (for larger projects)
+tsc --init
+- Generates a TypeScript configuration file for the project
+
+COMPILATION & EXECUTION
+=======================
+Basic Workflow
+tsc file.ts        # Compiles TypeScript to file.js
+node file.js       # Executes the compiled JavaScript
+
+Combined Command
+tsc file.ts; node file.js
+- Compiles and runs in one command
+
+COURSE STRUCTURE & LEARNING PATH
+=================================
+Essentials (Foundation)
+- Type assignment and inference
+- Built-in types (string, number, boolean, etc.)
+- Essential types and custom types
+
+Advanced Topics
+- Classes and interfaces
+- Generics and derived types
+- Decorators (niche feature)
+
+
+================================================================================
+Section 2: TypeScript Basic Types & Concepts
+================================================================================
+
+FUNDAMENTALS
+============
+NodeJS Runtime
+- Allows you to run JavaScript code directly on your system via the `node` command
+- No need for a browser
+
+Type Annotations & Type Reference
+- Type annotation: let username: string;
+- Type reference: age = 34 (TypeScript infers the type)
+- Note: typeof is a standard JavaScript operator (not TypeScript-specific)
+
+Compilation Process
+- Command: tsc file.ts; node file.js
+  1. tsc compiles TypeScript to JavaScript (file.js)
+  2. node executes the compiled JavaScript file
+- TypeScript MUST be compiled to JavaScript before running (cannot run directly in browser)
+
+Best Practices
+- Avoid 'any' type at all costs — it defeats TypeScript's type safety
+- Use union types instead: type | type (e.g., string | number)
+
+================================================================================
+GENERICS
+================================================================================
+
+What are Generics?
+- Allow creating types that work with ANY data type
+- Provide type safety and code reusability
+- Syntax: ClassName<TypeParameter>
+
+Syntax & Example
+- Array<string | number> is the same as (string | number)[]
+- Both accept any length, any order of strings OR numbers
+
+Example:
+let arr: Array<string | number> = [1, "hello", 2, "world"];  // ✅ Valid
+arr.push("test");   // ✅ Valid
+arr.push(123);      // ✅ Valid
+arr.push(true);     // ❌ Error - boolean not allowed
+
+Key Points
+- Flexible length: array can have any number of elements
+- Flexible order: any combination of string or number
+- Type safety: prevents wrong types from being added
+
+================================================================================
+TUPLES
+================================================================================
+
+What is a Tuple?
+- A fixed-length array with specific types at EACH position
+- Order matters, length matters, types matter
+- Syntax: [type1, type2, type3, ...]
+
+Example:
+let tuple: [string, number] = ["John", 30];
+tuple[0];      // "John" (string)
+tuple[1];      // 30 (number)
+tuple[2];      // ❌ Error - only 2 elements allowed
+
+let user: [string, number, boolean] = ["Alice", 25, true];
+// Position 0: string
+// Position 1: number
+// Position 2: boolean
+
+When to Use Tuples (Production Use Cases)
+1. Function returns with mixed types
+   function getUserInfo(): [string, number] {
+     return ["John Doe", 30];
+   }
+
+2. API responses with fixed structure
+   type APIResponse = [boolean, string | null];  // [success, errorMessage]
+   const response: APIResponse = [true, null];
+
+3. Fixed coordinates/colors
+   let coordinates: [number, number] = [10, 20];        // x, y
+   let color: [number, number, number] = [255, 128, 0]; // RGB
+
+4. Function destructuring
+   const [isSuccess, errorMsg] = response;
+   if (isSuccess) {
+     console.log("Request succeeded!");
+   } else {
+     console.log("Error:", errorMsg);
+   }
+
+Important: Don't use .push() on tuples — it breaks type safety
+✅ Better: Use Array<T> if you need dynamic length
+
+Generics vs Tuples
+- Generics: flexible type, flexible length, any order
+- Tuples: strict positions, strict types, fixed length
+
+================================================================================
+THE 'any', '{}', AND 'unknown' TYPES
+================================================================================
+
+The 'any' Type
+let x: any = undefined;
+- Accepts ANY value (including undefined, null)
+- Bypasses all type checking — defeats TypeScript's purpose
+- Use ONLY as absolute last resort
+
+The '{}' Type
+let val: {} = 'string';
+- Accepts any value EXCEPT null and undefined
+- Still bypasses type safety
+- Rarely used in production
+
+The 'unknown' Type ⭐ (RECOMMENDED)
+let x: unknown = undefined;
+- Safer than 'any' — forces type checking before use
+- Requires explicit type guards
+- Best practice for production code
+
+Production Best Practice
+- ❌ Avoid 'any' and '{}'
+- ✅ Use 'unknown' instead — it's type-safe and production-ready
+
+================================================================================
+TYPESCRIPT UTILITY TYPES - Record<K, T>
+================================================================================
+
+What is Record?
+- A built-in TypeScript utility type (NOT a JavaScript library)
+- Creates an object type with specific keys (K) and values (T)
+- Syntax: Record<KeyType, ValueType>
+
+PRODUCTION EXAMPLE: Configuration Management
+============================================
+Use Case: Store configuration settings for different environments
+
+❌ Bad Approach (no type safety):
+let config: any = {
+  development: { apiUrl: "http://localhost", debug: true },
+  production: { apiUrl: "https://api.prod.com", debug: false }
+};
+
+✅ Good Approach (with Record):
+type Environment = 'development' | 'staging' | 'production';
+
+interface ConfigSettings {
+  apiUrl: string;
+  debug: boolean;
+  timeout: number;
+}
+
+let config: Record<Environment, ConfigSettings> = {
+  development: { 
+    apiUrl: "http://localhost:3000", 
+    debug: true,
+    timeout: 5000
+  },
+  staging: { 
+    apiUrl: "https://staging.api.com", 
+    debug: true,
+    timeout: 8000
+  },
+  production: { 
+    apiUrl: "https://api.prod.com", 
+    debug: false,
+    timeout: 10000
+  }
+};
+
+// Usage (type-safe):
+const env: Environment = 'production';
+console.log(config[env].apiUrl);  // ✅ TypeScript checks this exists
+config['invalid'];                 // ❌ Error - 'invalid' not in Environment type
+
+ANOTHER PRODUCTION EXAMPLE: User Permissions
+=============================================
+type Role = 'admin' | 'editor' | 'viewer';
+
+interface Permissions {
+  canCreate: boolean;
+  canEdit: boolean;
+  canDelete: boolean;
+}
+
+const rolePermissions: Record<Role, Permissions> = {
+  admin: { canCreate: true, canEdit: true, canDelete: true },
+  editor: { canCreate: true, canEdit: true, canDelete: false },
+  viewer: { canCreate: false, canEdit: false, canDelete: false }
+};
+
+// Get permissions for a role
+function checkPermission(role: Role, action: keyof Permissions): boolean {
+  return rolePermissions[role][action];
+}
+
+checkPermission('admin', 'canDelete');   // true
+checkPermission('viewer', 'canDelete');  // false
+
+BEST USE CASES
+==============
+✅ Use Record when:
+- You have a FIXED SET of keys (known in advance)
+- Keys form a logical group (roles, environments, features)
+- All values have the SAME TYPE
+- You need type-safe lookups
+- Creating configuration/mapping objects
+- Permission/role systems
+- Feature flags or toggles
+- Enum-like key structures
+
+WHEN NOT TO USE Record
+======================
+❌ Don't use Record when:
+- Keys are DYNAMIC or unknown at compile time
+  Instead use: Map<string, T> or { [key: string]: T }
+  
+- Values have DIFFERENT TYPES
+  Instead use: Interface or Type union
+  
+- You need flexible structure
+  Instead use: Generic objects { [key: string]: any }
+  
+- You have complex nested structures
+  Instead use: Dedicated interfaces/classes
+
+COMPARISON: Record vs Alternatives
+===================================
+Record<Keys, T>          // Fixed keys, same value type, type-safe
+{ [key: string]: T }     // Dynamic keys, any string key
+Map<string, T>           // Dynamic keys, runtime flexibility
+Interface                // Fixed structure with named properties
+Type Union               // Different types for different keys
+
+Example - When to use alternatives:
+
+// ✅ Record (fixed keys, same type)
+const userRoles: Record<'admin' | 'user', string> = {
+  admin: "Administrator",
+  user: "Regular User"
+};
+
+// ✅ Object notation (dynamic keys, same type)
+const userData: { [key: string]: string } = {
+  name: "John",
+  email: "john@example.com",
+  city: "New York"
+  // Can add any key dynamically
+};
+
+// ✅ Map (dynamic keys, runtime flexibility)
+const cache: Map<string, any> = new Map();
+cache.set("key1", "value1");
+cache.set("key2", { data: "complex" });
+
+// ✅ Interface (fixed named properties, different types)
+interface User {
+  name: string;
+  age: number;
+  email: string;
+}
+
+enum is only available in ts nnot in JS
+
+================================================================================
+ENUMS (ENUMERATION TYPES)
+================================================================================
+
+What is an Enum?
+- Defines a set of named constants
+- Syntax: enum NameOfEnum { VALUE1, VALUE2, VALUE3 }
+
+Example:
+enum Status {
+  Active = 'active',
+  Inactive = 'inactive',
+  Pending = 'pending'
+}
+
+const userStatus: Status = Status.Active;
+
+✅ BEST USE CASES
+==================
+- User Roles: admin, user, guest
+- Status: active, inactive, pending
+- Directions: up, down, left, right
+- HTTP Methods: GET, POST, PUT, DELETE
+
+❌ DON'T USE WHEN
+==================
+- Values are dynamic (from API) → use Union types
+- Need flexibility to add new values → use Record
+- Large lists → bloats JavaScript
+
+ENUM vs UNION TYPE
+===================
+enum Status { Active, Inactive }    // Fixed, type-safe
+type Status = 'active' | 'inactive' // Flexible, better for APIs
+
+PRODUCTION BEST PRACTICE
+=======================
+✅ Use enum for: fixed roles, statuses, directions
+✅ Use union for: flexible/API values
+✅ Use Record for: value mappings and labels
+
+================================================================================
+LITERAL TYPES
+================================================================================
+
+What is a Literal Type?
+- Specifies an EXACT value (not just the type)
+- Can be: string, number, boolean
+- Syntax: let variable: 'exact-value' | 'another-value'
+
+String Literal Example:
+type Status = 'active' | 'inactive' | 'pending';
+const status: Status = 'active';      // ✅ Valid
+const status: Status = 'active123';   // ❌ Error
+
+Number Literal Example:
+type Result = 1 | -1 | 0;
+const result: Result = 1;             // ✅ Valid
+const result: Result = 5;             // ❌ Error
+
+LITERAL TYPES vs ENUMS
+=======================
+Literal Type (Union)
+- No JavaScript output
+- Lighter compiled code
+- Better for APIs (flexible)
+- type Status = 'active' | 'inactive'
+
+Enum
+- Compiles to JavaScript object
+- Larger bundle size
+- Fixed values only
+- enum Status { Active, Inactive }
+
+PRODUCTION EXAMPLES
+===================
+Example 1: API Response Handling
+type HttpStatus = 200 | 201 | 400 | 401 | 404 | 500;
+
+function handleResponse(code: HttpStatus) {
+  if (code === 200) console.log("Success");
+  if (code === 400) console.log("Bad request");
+}
+
+Example 2: Direction Movement
+type Direction = 'up' | 'down' | 'left' | 'right';
+
+function move(direction: Direction) {
+  switch (direction) {
+    case 'up': player.y--;
+    case 'down': player.y++;
+    // etc...
+  }
+}
+
+Example 3: Tuple with Literal Types
+type ComparisonResult = [1 | -1 | 0, number];
+
+function compare(a: number, b: number): ComparisonResult {
+  if (a > b) return [1, a - b];
+  if (a < b) return [-1, b - a];
+  return [0, 0];
+}
+
+WHY USE LITERAL TYPES OVER ENUMS?
+==================================
+✅ No extra JavaScript output (smaller bundle)
+✅ Works perfectly with APIs (string values)
+✅ Simpler to read: 'active' vs Status.Active
+✅ Compatible with regular JavaScript values
+✅ Better for type unions and complex types
+✅ No magic enum behavior to understand
+
+WHEN TO USE WHICH
+=================
+Use Literal Types when:
+- Values come from APIs
+- Want smaller compiled code
+- Need flexibility
+- Simple fixed values
+
+Use Enums when:
+- Values must be completely fixed (compile-time check)
+- Need named members
+- Complex enum behaviors needed
+- Team preference for enum pattern
+
+PRODUCTION RECOMMENDATION
+========================
+✅ Prefer literal types for most cases
+❌ Use enums only when enum-specific features are needed
+
+================================================================================
+TYPE ALIASES & CUSTOM TYPES
+================================================================================
+
+What is a Type Alias?
+- Creates a custom name for any type
+- Syntax: type NameOfType = TypeDefinition
+- Reusable across your application
+- Only exists in TypeScript (compiles away in JavaScript)
+
+Simple Examples
+===============
+type Age = number;
+type Name = string;
+type Status = 'active' | 'inactive';
+type UserId = number | string;
+
+PRODUCTION EXAMPLES
+===================
+Example 1: User Object Type
+type User = {
+  id: number;
+  name: string;
+  email: string;
+  role: 'admin' | 'user' | 'guest';
+};
+
+const user: User = {
+  id: 1,
+  name: "John",
+  email: "john@email.com",
+  role: 'admin'
+};
+
+Example 2: API Response Type
+type ApiResponse<T> = {
+  success: boolean;
+  data: T;
+  message: string;
+};
+
+type UserResponse = ApiResponse<User>;
+// Result: { success, data: User, message }
+
+Example 3: Callback Function Type
+type Callback = (error: Error | null, result: string) => void;
+
+function fetchData(callback: Callback) {
+  // callback(null, "success");
+  // callback(new Error("failed"), "");
+}
+
+✅ GOOD PRACTICES
+=================
+✅ Name types clearly and descriptively
+   type User (good)
+   type U (bad)
+
+✅ Group related types
+   type Status = 'active' | 'inactive' | 'pending';
+   type Role = 'admin' | 'user' | 'guest';
+
+✅ Use types for repeated complex shapes
+   type ApiResponse = { success: boolean; data: any };
+   // Reuse everywhere instead of repeating
+
+✅ Keep types simple and focused
+   type User = { id: number; name: string; email: string };
+
+✅ Document complex types with comments
+   // Represents a paginated API response
+   type PaginatedResponse<T> = {
+     data: T[];
+     page: number;
+     total: number;
+   };
+
+❌ BAD PRACTICES
+================
+❌ DON'T name types vaguely
+   type Data (bad)
+   type Response (too generic)
+   type UserData (better)
+
+❌ DON'T create unnecessary types
+   type Num = number;  // Pointless
+   type Str = string;  // Just use string
+
+❌ DON'T nest types too deeply
+   ❌ Bad: type A = { b: { c: { d: string } } }
+   ✅ Good: Split into separate types
+   type C = { d: string };
+   type B = { c: C };
+   type A = { b: B };
+
+❌ DON'T use 'any' in type definitions
+   ❌ type Data = { value: any };
+   ✅ type Data<T> = { value: T };
+
+❌ DON'T mix types and interfaces randomly
+   Pick one style and stick with it
+
+TYPE ALIASES vs INTERFACES
+============================
+Type Aliases
+- Can represent any type (union, primitive, tuple)
+- type Status = 'active' | 'inactive'
+- Immutable (can't be redefined)
+
+Interfaces
+- Only for object shapes
+- interface User { name: string }
+- Can be extended and merged
+- More flexible for class-based code
+
+PRODUCTION BEST PRACTICE
+=======================
+✅ Use type aliases for: unions, functions, primitives, generics
+✅ Use interfaces for: object contracts, class implementations
+✅ Keep types simple and reusable
+✅ Document complex types
+✅ Group related types together
+✅ Avoid deep nesting
+
+
+
+================================================================================
+FUNCTION TYPES & RETURN VALUES
+================================================================================
+
+Function Return Type Annotation
+=================================
+Syntax: function name(params): ReturnType { }
+
+Example:
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+How it works:
+- `: number` after parameters specifies what type the function returns
+- TypeScript enforces the return type — must return a number
+- If you return something else, TypeScript gives an error
+- Hover over function name in IDE shows the return type
+
+VOID TYPE - Functions That Return Nothing
+===========================================
+Use void when function doesn't return a value
+
+Example:
+function logMessage(message: string): void {
+  console.log(message);
+}
+
+// Returning undefined is okay with void:
+function greet(name: string): void {
+  console.log(`Hello, ${name}`);
+  // No return statement needed
+}
+
+Key Point: void means "this function has no useful return value"
+
+THE NEVER TYPE - Functions That Never Complete
+===============================================
+Use never when function never returns (infinite loop, error throw, etc.)
+
+Example:
+function throwError(message: string): never {
+  throw new Error(message);
+  // This function always throws — execution never completes
+}
+
+function infiniteLoop(): never {
+  while (true) {
+    // Never exits
+  }
+}
+
+Key Point: never means "this function never reaches the end"
+
+FUNCTIONS AS TYPES
+==================
+Functions can be stored, passed as arguments, and returned from functions
+
+Example 1: Function as parameter
+type Callback = (msg: string) => void;
+
+function performJob(cb: Callback) {
+  console.log("Performing job...");
+  cb("Job complete!");
+}
+
+// Pass a function as argument
+const logMsg = (msg: string) => {
+  console.log(msg);
+};
+
+performJob(logMsg);  // ✅ Passes the function
+
+FUNCTION TYPE SYNTAX EXPLAINED
+==============================
+(msg: string) => void
+
+Left side (msg: string) = parameter type
+Right side (=> void) = return type
+
+More examples:
+(a: number, b: number) => number      // Takes 2 numbers, returns number
+(name: string) => void                // Takes string, returns nothing
+() => boolean                         // Takes nothing, returns boolean
+(id: number) => User                  // Takes number, returns User
+(data: string[]) => string | number   // Takes array, returns string or number
+
+ARROW FUNCTION vs FUNCTION DECLARATION
+======================================
+Arrow function:
+const logMsg = (msg: string) => {
+  console.log(msg);
+};
+
+Function declaration (equivalent):
+function logMsg(msg: string) {
+  console.log(msg);
+}
+
+Both work the same way — choose your style
+
+PRODUCTION EXAMPLE: Callback Pattern
+====================================
+// Define callback type
+type DataHandler = (data: string) => void;
+
+function fetchData(url: string, onSuccess: DataHandler, onError: (error: string) => void) {
+  // Simulated fetch
+  if (url.includes("api")) {
+    onSuccess("Data loaded!");
+  } else {
+    onError("Invalid URL");
+  }
+}
+
+// Usage:
+fetchData(
+  "https://api.com/data",
+  (data) => console.log("Success:", data),
+  (error) => console.log("Error:", error)
+);
+
+BEST PRACTICES
+==============
+✅ Always annotate function return types
+✅ Use void for functions with no return value
+✅ Use type for callback/function parameters
+✅ Keep function types simple and readable
+✅ Document complex function signatures
+
+COMMON FUNCTION TYPE PATTERNS
+=============================
+Event handlers:
+type ClickHandler = (event: MouseEvent) => void;
+
+API transformers:
+type Transformer<T, U> = (input: T) => U;
+
+Async operations:
+type AsyncOperation = (data: string) => Promise<string>;
+
+================================================================================
+OBJECT TYPES WITH FUNCTION PROPERTIES
+================================================================================
+
+What are Function Properties?
+- Objects can have properties that are functions
+- Define using: propertyName: (params) => ReturnType
+
+Example: User object with greet method
+type User = {
+  name: string;
+  age: number;
+  greet: (msg: string) => string;  // Function property
+};
+
+Implementation:
+const user: User = {
+  name: "John",
+  age: 23,
+  greet: (msg: string) => {
+    return `${msg}, I'm ${user.name}`;
+  }
+};
+
+Usage:
+console.log(user.greet("Hello"));  // "Hello, I'm John"
+
+PRODUCTION EXAMPLE: Event Handlers in Objects
+==============================================
+type Button = {
+  label: string;
+  onClick: (event: MouseEvent) => void;
+  onHover: (entered: boolean) => void;
+};
+
+const submitBtn: Button = {
+  label: "Submit",
+  onClick: (event) => {
+    console.log("Button clicked");
+    // Handle submission
+  },
+  onHover: (entered) => {
+    console.log(entered ? "Mouse over" : "Mouse left");
+  }
+};
+
+PRODUCTION EXAMPLE: API Client Object
+====================================
+type ApiClient = {
+  baseUrl: string;
+  fetch: (endpoint: string) => Promise<any>;
+  post: (endpoint: string, data: any) => Promise<any>;
+  handleError: (error: Error) => void;
+};
+
+const client: ApiClient = {
+  baseUrl: "https://api.example.com",
+  fetch: async (endpoint) => {
+    const response = await fetch(client.baseUrl + endpoint);
+    return response.json();
+  },
+  post: async (endpoint, data) => {
+    const response = await fetch(client.baseUrl + endpoint, {
+      method: "POST",
+      body: JSON.stringify(data)
+    });
+    return response.json();
+  },
+  handleError: (error) => {
+    console.error("API Error:", error.message);
+  }
+};
+
+KEY POINTS
+==========
+✅ Function properties are type-safe
+✅ Can pass functions when creating objects
+✅ Useful for callbacks and handlers
+✅ Makes code organized and reusable
+✅ IDE provides autocomplete for function parameters
+
+BEST PRACTICES
+==============
+✅ Use clear, descriptive names for function properties (onClick, onError, etc.)
+✅ Document what each function does
+✅ Keep function signatures simple
+✅ Use consistent patterns across similar objects
+✅ Type-check function parameters and return types
+
+
+================================================================================
+NULL AND UNDEFINED
+================================================================================
+
+What's the Difference?
+======================
+null
+- Represents "intentional emptiness" or "no value"
+- Used to explicitly clear/reset a variable
+- JavaScript feature (not TypeScript-specific)
+
+undefined
+- Represents "no value assigned yet"
+- Used when variable exists but has no value
+- JavaScript feature (not TypeScript-specific)
+
+Example:
+let age: number | null = null;    // Intentionally empty
+let name: string | undefined;     // Not yet assigned
+console.log(name);                // undefined (automatic)
+
+UNION TYPES WITH NULL/UNDEFINED
+================================
+let value: string | null = "hello";  // Can be string or null
+value = null;                        // ✅ Valid
+value = "world";                     // ✅ Valid
+value = 123;                         // ❌ Error
+
+let optional: number | undefined;   // Can be number or undefined
+optional = 5;                        // ✅ Valid
+optional = undefined;                // ✅ Valid (auto-assigned)
+optional = "text";                   // ❌ Error
+
+WHEN TO USE WHICH
+=================
+Use null when:
+- Explicitly clearing a value
+- Representing "no data"
+- Resetting a variable intentionally
+- API responses with null fields
+
+Use undefined when:
+- Variable declared but not initialized
+- Function with no return value
+- Optional function parameters
+- Missing object properties
+
+PRODUCTION EXAMPLE: User Data
+=============================
+type User = {
+  id: number;
+  name: string;
+  email: string;
+  phone: string | null;        // Optional phone field
+  middleName: string | undefined;  // May not be provided
+  lastLogin: Date | null;      // Explicitly cleared after logout
+};
+
+const user: User = {
+  id: 1,
+  name: "John",
+  email: "john@email.com",
+  phone: null,                 // No phone provided
+  middleName: undefined,       // Not specified
+  lastLogin: null              // User hasn't logged in yet
+};
+
+CHECKING FOR NULL/UNDEFINED
+============================
+// Safe checking
+if (user.phone !== null) {
+  console.log(user.phone);  // Safe to use
+}
+
+if (user.middleName !== undefined) {
+  console.log(user.middleName);
+}
+
+// Check for both at once
+if (user.lastLogin != null) {  // != null checks both null AND undefined
+  console.log(user.lastLogin);
+}
+
+OPTIONAL CHAINING (?.)
+======================
+// Access property only if exists
+console.log(user.phone?.length);  // Safe, returns undefined if phone is null
+
+// Call function only if exists
+user.greet?.();  // Safe, does nothing if greet doesn't exist
+
+NULL COALESCING (??)
+====================
+// Provide default value if null/undefined
+const displayName = user.middleName ?? "No middle name";
+
+BEST PRACTICES
+==============
+✅ Use null to explicitly represent "no value"
+✅ Use undefined for uninitialized variables
+✅ Use optional chaining (?.) for safe property access
+✅ Use null coalescing (??) for default values
+✅ Document when values can be null/undefined
+✅ Always check before using nullable values
+
+COMMON PATTERN: Strict Null Checks
+===================================
+In tsconfig.json, enable:
+"strictNullChecks": true
+
+This forces you to explicitly handle null/undefined
+Makes code safer and prevents runtime errors
+
+================================================================================
+TYPE NARROWING
+================================================================================
+
+What is Type Narrowing?
+- Refining a type from broader to more specific
+- Used when variable can be multiple types (union types)
+- TypeScript narrows the type after checking
+
+Example: Union Type
+let value: string | number;
+// At this point, value could be string OR number
+
+if (typeof value === "string") {
+  // Inside this block, TypeScript KNOWS value is string
+  console.log(value.toUpperCase());  // ✅ String methods available
+}
+
+PRODUCTION EXAMPLE: DOM Element Handling
+==========================================
+const inputEl: HTMLElement | null = document.getElementById("input");
+// Hover over inputEl in IDE → shows: (variable) inputEl: HTMLElement | null
+
+// Without narrowing - TypeScript error:
+// inputEl.value  // ❌ Error - might be null
+
+// With narrowing - Type-safe:
+if (inputEl !== null) {
+  inputEl.value = "Hello";
+  // Hover over inputEl here → shows: (variable) inputEl: HTMLElement
+  // ✅ TypeScript narrowed the type inside the if block
+}
+
+// Or using optional chaining:
+inputEl?.focus();  // Safe, does nothing if null
+
+TYPE NARROWING METHODS
+======================
+
+1. Truthiness Check
+const user: User | null = getUser();
+
+if (user) {
+  console.log(user.name);  // ✅ Narrowed to User (not null)
+}
+
+2. Typeof Check
+function process(value: string | number) {
+  if (typeof value === "string") {
+    console.log(value.toUpperCase());  // ✅ String methods
+  } else {
+    console.log(value.toFixed(2));     // ✅ Number methods
+  }
+}
+
+3. Instance Check
+function handleEvent(event: Event | CustomEvent) {
+  if (event instanceof CustomEvent) {
+    console.log(event.detail);  // ✅ CustomEvent properties
+  }
+}
+
+4. Property Check
+type User = { name: string };
+type Admin = { name: string; role: string };
+
+function handleAccount(account: User | Admin) {
+  if ("role" in account) {
+    console.log(account.role);  // ✅ Narrowed to Admin
+  } else {
+    console.log(account.name);  // ✅ Narrowed to User
+  }
+}
+
+PRODUCTION EXAMPLE: API Response Handling
+==========================================
+type Success = { status: 'success'; data: any };
+type Error = { status: 'error'; message: string };
+type ApiResponse = Success | Error;
+
+function handleResponse(response: ApiResponse) {
+  if (response.status === 'success') {
+    // Narrowed to Success
+    console.log("Data:", response.data);
+  } else {
+    // Narrowed to Error
+    console.log("Error:", response.message);
+  }
+}
+
+BEST PRACTICES
+==============
+✅ Always narrow types before using union type properties
+✅ Use explicit checks (null, typeof, instanceof)
+✅ Use optional chaining for safety
+✅ Keep narrowing logic simple and readable
+✅ TypeScript will guide you with error messages
+
+✅ Catches bugs before runtime
+
+================================================================================
+NON-NULL ASSERTION (!)
+================================================================================
+
+What is the Non-Null Assertion Operator?
+- Syntax: variable!
+- Tells TypeScript "trust me, this value is NOT null/undefined"
+- Removes null/undefined from the type
+- TypeScript-only feature (removed during compilation)
+
+Example:
+const inputEl = document.getElementById("input")!;
+// Without ! → type is HTMLElement | null
+// With ! → type is HTMLElement
+
+How it works:
+- The ! says "I'm 100% sure this won't be null"
+- Bypasses TypeScript's null checks
+- If you're wrong → runtime error
+
+⚠️ WARNING: Use Only When You're Certain
+==========================================
+const element = document.getElementById("definitely-exists")!;
+// ✅ Safe if element ID definitely exists in HTML
+
+const element = document.getElementById("maybe-exists")!;
+// ❌ DANGEROUS - will crash if element doesn't exist
+
+BEST PRACTICE
+==============
+❌ Avoid non-null assertions when possible
+✅ Use type narrowing or optional chaining instead
+✅ Use assertions only when 100% certain
+
+================================================================================
+OPTIONAL CHAINING (?.)
+================================================================================
+
+What is Optional Chaining?
+- Syntax: object?.property or function?.()
+- Safely access properties/call functions that might be null/undefined
+- Returns undefined if property doesn't exist (instead of error)
+- Works in JavaScript AND TypeScript
+
+Example 1: Property Access
+const user: User | null = getUser();
+
+// Without optional chaining:
+console.log(user.name);  // ❌ Error - user might be null
+
+// With optional chaining:
+console.log(user?.name);  // ✅ Safe - returns undefined if user is null
+
+Example 2: Function Call
+const button: Button | null = getButton();
+
+// Without optional chaining:
+button.onClick();  // ❌ Error - might be null
+
+// With optional chaining:
+button?.onClick();  // ✅ Safe - does nothing if button is null
+
+Example 3: Nested Property Access
+const user: User | null = getUser();
+
+// Without optional chaining:
+console.log(user.address.street);  // ❌ Error at multiple points
+
+// With optional chaining:
+console.log(user?.address?.street);  // ✅ Safe at each step
+
+OPTIONAL CHAINING WITH FALLBACK
+==============================
+// Provide default value if null
+const name = user?.name ?? "Guest";
+
+// Call function if exists
+user?.greet?.();
+
+// Access array element
+const first = items?.[0];
+
+PRODUCTION EXAMPLE: Handling API Data
+======================================
+type ApiResponse = {
+  user?: {
+    name: string;
+    email: string;
+    profile?: {
+      bio: string;
+      avatar?: string;
+    }
+  }
+};
+
+const response = fetchUser();
+
+// Safe nested access:
+console.log(response.user?.name);              // Safe
+console.log(response.user?.profile?.bio);      // Safe
+console.log(response.user?.profile?.avatar);   // Safe
+
+// With fallbacks:
+const avatar = response.user?.profile?.avatar ?? "/default-avatar.jpg";
+
+WHEN TO USE WHICH
+=================
+Use Non-Null Assertion (!) when:
+- You're 100% certain value exists
+- You know something TypeScript doesn't
+- Alternatives would make code unreadable
+
+Use Optional Chaining (?.) when:
+- Value might be null/undefined
+- Want safe property/method access
+- Need clean, readable code
+- Most common and recommended
+
+BEST PRACTICES
+==============
+✅ Prefer optional chaining (?.) over assertions
+✅ Use assertions sparingly
+✅ Always provide fallback values (??)
+✅ Test edge cases where values are null
+✅ Document why you're using assertions
+
+================================================================================
+TYPE CASTING (TYPE ASSERTION)
+================================================================================
+
+What is Type Casting?
+- Converting one type to another
+- Telling TypeScript "trust me, this is actually this type"
+- Syntax: variable as NewType
+- TypeScript-only feature (removed during compilation)
+
+Why Do We Need Type Casting?
+DOM elements are generic (HTMLElement) but specific elements have extra properties
+Example: input.value doesn't exist on generic HTMLElement
+
+Simple Example
+const input = document.getElementById("username");
+// Type: HTMLElement | null
+// Problem: no 'value' property on HTMLElement
+
+const inputEl = document.getElementById("username") as HTMLInputElement;
+// Type: HTMLInputElement (now has 'value' property)
+// ✅ Can now access: inputEl.value
+
+PRODUCTION EXAMPLE: Form Handling
+=================================
+// HTML: <input id="email" type="email" />
+
+// Without casting - TypeScript error:
+const email = document.getElementById("email");
+console.log(email.value);  // ❌ Error - HTMLElement has no 'value'
+
+// With casting - Type-safe:
+const emailInput = document.getElementById("email") as HTMLInputElement;
+console.log(emailInput.value);  // ✅ Works - has 'value' property
+
+COMMON DOM ELEMENT CASTINGS
+===========================
+as HTMLInputElement      // For <input> - has value, checked, etc.
+as HTMLButtonElement     // For <button> - has click event
+as HTMLSelectElement     // For <select> - has value, options
+as HTMLTextAreaElement   // For <textarea> - has value
+
+CASTING WITH UNION TYPES
+========================
+// Include null in the type
+const input = document.getElementById("username") as HTMLInputElement | null;
+
+if (input) {
+  console.log(input.value);  // ✅ Safe to use
+}
+
+PRODUCTION EXAMPLE: Different Element Types
+===========================================
+// Casting for different elements
+const button = document.getElementById("submit") as HTMLButtonElement;
+const input = document.getElementById("email") as HTMLInputElement;
+const select = document.getElementById("options") as HTMLSelectElement;
+
+// Now use specific properties:
+button.disabled = true;
+input.value = "user@email.com";
+select.selectedIndex = 0;
+
+⚠️ WARNING: Type Casting is NOT Safe
+====================================
+// This compiles but could crash:
+const notAnInput = document.getElementById("paragraph") as HTMLInputElement;
+notAnInput.value;  // ❌ Runtime error - paragraph has no value!
+
+Type casting just tells TypeScript to trust you
+If you're wrong → runtime error with no warning
+
+BETTER ALTERNATIVE: Type Guards
+================================
+// Check before casting:
+const element = document.getElementById("username");
+
+if (element instanceof HTMLInputElement) {
+  console.log(element.value);  // ✅ Safe - verified it's HTMLInputElement
+}
+
+CASTING vs TYPE NARROWING
+==========================
+Type Casting (as):
+- Syntax: variable as Type
+- No runtime checks
+- Dangerous if wrong
+- Use when certain
+
+Type Narrowing (if checks):
+- Syntax: if (x instanceof Type)
+- Has runtime checks
+- Safe and verified
+- Preferred approach
+
+BEST PRACTICES
+==============
+✅ Prefer type narrowing/guards over casting
+✅ Use casting only when 100% certain
+✅ Combine casting with null checks
+✅ Document why you're casting
+✅ Test edge cases thoroughly
+
+PRODUCTION RECOMMENDATION
+=========================
+// Good:
+if (element instanceof HTMLInputElement) {
+  element.value = "safe";
+}
+
+// Acceptable (if certain):
+const input = document.getElementById("email") as HTMLInputElement | null;
+if (input) {
+  input.value = "safe";
+}
+
+// Avoid:
+(document.getElementById("email") as HTMLInputElement).value = "risky";
+
+================================================================================
+THE 'unknown' TYPE - Safe Alternative to 'any'
+================================================================================
+
+What is the Unknown Type?
+- Safer version of 'any'
+- Accepts ANY value like 'any'
+- But FORCES type checking before use
+- More secure for production code
+
+Unknown vs Any Comparison
+==========================
+any:
+- Accepts any value ✅
+- No type checking required ❌
+- Can use immediately ❌
+- Risky at runtime ❌
+
+unknown:
+- Accepts any value ✅
+- REQUIRES type checking ✅
+- Can't use until narrowed ✅
+- Safe at runtime ✅
+
+SIMPLE EXAMPLE
+==============
+// With 'any' - No checks needed:
+function process(val: any) {
+  console.log(val.toUpperCase());  // ✅ Compiles (but might crash!)
+}
+
+process(123);  // ❌ Runtime error - numbers don't have toUpperCase()
+
+// With 'unknown' - Forced to check:
+function process(val: unknown) {
+  // console.log(val.toUpperCase());  // ❌ Error - must check first
+  
+  if (typeof val === 'string') {
+    console.log(val.toUpperCase());  // ✅ Safe - know it's string
+  }
+}
+
+process(123);  // ✅ Safe - check prevents error
+
+PRODUCTION EXAMPLE: API Response Handler
+========================================
+// ❌ Bad - using 'any':
+function handleResponse(data: any) {
+  console.log(data.user.name);  // Might crash
+  data.process();               // Might crash
+}
+
+// ✅ Good - using 'unknown':
+function handleResponse(data: unknown) {
+  // Check the type first
+  if (typeof data === 'object' && data !== null && 'user' in data) {
+    const user = (data as { user: { name: string } }).user;
+    console.log(user.name);  // ✅ Safe
+  }
+}
+
+TYPE NARROWING WITH UNKNOWN
+===========================
+function process(val: unknown) {
+  // Typeof check:
+  if (typeof val === 'string') {
+    console.log(val.toUpperCase());  // String method ✅
+  }
+  
+  // Instanceof check:
+  if (val instanceof Date) {
+    console.log(val.getTime());  // Date method ✅
+  }
+  
+  // Property check:
+  if (typeof val === 'object' && val !== null && 'log' in val) {
+    // Has 'log' property
+  }
+  
+  // Truthiness check:
+  if (val) {
+    // Not null, undefined, 0, "", false, etc.
+  }
+}
+
+KEY DIFFERENCES EXPLAINED
+=========================
+With 'any':
+- TypeScript trusts you completely
+- No error checking
+- Freedom but danger
+- Silent runtime errors possible
+
+With 'unknown':
+- TypeScript forces verification
+- Must prove type before use
+- Safer by design
+- Catches errors before runtime
+
+PRODUCTION PATTERN: Wrapper Function
+====================================
+function safeProcess(val: unknown): string {
+  // Narrow the type
+  if (typeof val === 'string') {
+    return val.toUpperCase();
+  }
+  
+  if (typeof val === 'number') {
+    return val.toString();
+  }
+  
+  // Fallback
+  return "Invalid input";
+}
+
+console.log(safeProcess("hello"));   // "HELLO" ✅
+console.log(safeProcess(123));       // "123" ✅
+console.log(safeProcess({}));        // "Invalid input" ✅
+
+BEST PRACTICES
+==============
+✅ Use 'unknown' instead of 'any' by default
+✅ Always check type before using unknown values
+✅ Use typeof, instanceof, property checks
+✅ Provide fallback for unexpected types
+✅ Document what types are expected
+
+WHEN TO USE
+===========
+Use 'unknown' when:
+- Receiving data from API/external source
+- Function can receive any type
+- Want to force type safety
+- Most of the time!
+
+- Function can receive any type
+- Want to force type safety
+- Most of the time!
+
+Use 'any' when:
+- Integrating legacy JavaScript
+- You absolutely can't determine type
+- Temporary workaround only
+- Rarely!
+
+================================================================================
+OPTIONAL PARAMETERS & PROPERTIES
+================================================================================
+
+What are Optional Parameters?
+- Syntax: paramName?: Type
+- Parameter doesn't have to be provided when calling function
+- Can be undefined if not provided
+- Shorthand for paramName: Type | undefined
+
+OPTIONAL FUNCTION PARAMETERS
+=============================
+function generateError(msg: string) {
+  throw new Error(msg);
+}
+
+// Problem: msg is REQUIRED
+generateError();           // ❌ Error - missing argument
+generateError("Oh no!");   // ✅ Works
+
+// Solution: Make msg optional
+function generateError(msg?: string) {
+  throw new Error(msg ?? "Unknown error");
+}
+
+generateError();           // ✅ Works - msg is undefined
+generateError("Oh no!");   // ✅ Works - msg is "Oh no!"
+
+OPTIONAL OBJECT PROPERTIES
+===========================
+type User = {
+  id: number;
+  name: string;
+  age: number;
+  role?: "admin" | "guest";    // Optional property
+  nickname?: string;           // Optional property
+};
+
+// Valid User objects:
+const user1: User = {
+  id: 1,
+  name: "John",
+  age: 30
+  // role and nickname omitted ✅
+};
+
+const user2: User = {
+  id: 2,
+  name: "Jane",
+  age: 25,
+  role: "admin",      // Included ✅
+  nickname: "JD"      // Included ✅
+};
+
+PRODUCTION EXAMPLE: Config Object
+=================================
+type AppConfig = {
+  port: number;
+  host: string;
+  debug?: boolean;        // Optional
+  logLevel?: 'info' | 'warn' | 'error';  // Optional
+  apiKey?: string;        // Optional
+};
+
+const config: AppConfig = {
+  port: 3000,
+  host: "localhost"
+  // debug, logLevel, apiKey are optional
+};
+
+OPTIONAL vs UNION WITH UNDEFINED
+================================
+// These are equivalent:
+type Option1 = { value?: string };
+type Option2 = { value: string | undefined };
+
+Both mean value can be:
+- Omitted (undefined)
+- Set to string value
+- Set to undefined
+
+HANDLING OPTIONAL VALUES
+=========================
+// Safe access to optional property:
+type Product = {
+  name: string;
+  description?: string;
+};
+
+const product: Product = { name: "Widget" };
+
+// ✅ Safe ways:
+console.log(product.description);           // undefined (safe)
+console.log(product.description?.length);   // Optional chaining
+console.log(product.description ?? "N/A");  // Null coalescing
+
+// Checking before use:
+if (product.description) {
+  console.log(product.description);  // Safe - narrowed
+}
+
+OPTIONAL FUNCTION PARAMETERS WITH DEFAULTS
+==========================================
+function greet(name?: string) {
+  const displayName = name ?? "Guest";
+  console.log(`Hello, ${displayName}`);
+}
+
+greet();           // "Hello, Guest"
+greet("John");     // "Hello, John"
+
+MULTIPLE OPTIONAL PARAMETERS
+=============================
+function createUser(
+  name: string,
+  email?: string,
+  role?: string,
+  active?: boolean
+) {
+  return {
+    name,
+    email: email ?? "no-email@example.com",
+    role: role ?? "user",
+    active: active ?? true
+  };
+}
+
+createUser("John");                          // Uses all defaults ✅
+createUser("John", "john@email.com");        // Partial options ✅
+createUser("John", "john@email.com", "admin", false);  // All options ✅
+
+BEST PRACTICES
+==============
+✅ Use optional (?) for truly optional values
+✅ Provide defaults for optional parameters
+✅ Document what happens when optional is omitted
+✅ Use optional chaining (?.) to safely access
+✅ Use null coalescing (??) for default values
+✅ Keep optional parameters at end of parameter list
+
+⚠️ AVOID
+========
+❌ Required parameters after optional ones
+   function bad(optional?: string, required: string) {}  // ❌ Bad order
+   function good(required: string, optional?: string) {}  // ✅ Good
+
+PRODUCTION PATTERN
+==================
+type RequestConfig = {
+  url: string;
+  method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
+  headers?: Record<string, string>;
+  body?: unknown;
+  timeout?: number;
+};
+
+function makeRequest(config: RequestConfig) {
+  const method = config.method ?? 'GET';
+  const timeout = config.timeout ?? 5000;
+  
+  // Use defaults for optional values
+  console.log(`${method} ${config.url} (${timeout}ms)`);
+}
+
+makeRequest({ url: "https://api.example.com" });  // All defaults ✅
+makeRequest({
+  url: "https://api.example.com",
+  method: "POST",
+  timeout: 10000
+});  // Partial override ✅
+
+  console.log(`${method} ${config.url} (${timeout}ms)`);
+}
+
+makeRequest({ url: "https://api.example.com" });  // All defaults ✅
+makeRequest({
+  url: "https://api.example.com",
+  method: "POST",
+  timeout: 10000
+});  // Partial override ✅
+
+================================================================================
+NULLISH COALESCING OPERATOR (??)
+================================================================================
+
+What is Nullish Coalescing?
+- Syntax: leftValue ?? rightValue
+- Returns rightValue if leftValue is null or undefined
+- Returns leftValue for any other value (including 0, "", false)
+- Standard JavaScript feature (not TypeScript-specific)
+
+Why Do We Need It?
+- The || operator is too aggressive with falsy checks
+- ?? only checks for null/undefined (more precise)
+
+THE PROBLEM WITH || (OR OPERATOR)
+=================================
+const input = "";
+const output = input || "default";
+console.log(output);  // "default" (treats "" as falsy)
+
+const input = 0;
+const output = input || 10;
+console.log(output);  // 10 (treats 0 as falsy)
+
+const input = false;
+const output = input || true;
+console.log(output);  // true (treats false as falsy)
+
+Issue: || treats empty string, 0, and false as "falsy"
+But these might be VALID values you want to keep!
+
+THE SOLUTION: ?? (NULLISH COALESCING)
+======================================
+const input = "";
+const output = input ?? "default";
+console.log(output);  // "" (kept because not null/undefined)
+
+const input = 0;
+const output = input ?? 10;
+console.log(output);  // 0 (kept because not null/undefined)
+
+const input = false;
+const output = input ?? true;
+console.log(output);  // false (kept because not null/undefined)
+
+Solution: ?? only checks for null/undefined
+
+COMPARISON: || VS ??
+====================
+const value = "";
+
+// Using ||:
+const with_or = value || "default";
+console.log(with_or);  // "default" (❌ loses empty string)
+
+// Using ??:
+const with_nullish = value ?? "default";
+console.log(with_nullish);  // "" (✅ keeps empty string)
+
+PRODUCTION EXAMPLES
+===================
+Example 1: Form Input (0 is valid)
+// ❌ Wrong - || loses 0:
+const quantity = userInput || 1;
+
+// ✅ Correct - ?? keeps 0:
+const quantity = userInput ?? 1;
+
+Example 2: Boolean Flags (false is valid)
+// ❌ Wrong - || loses false:
+const isEnabled = config || true;
+
+// ✅ Correct - ?? keeps false:
+const isEnabled = config ?? true;
+
+Example 3: Empty String (might be valid)
+// ❌ Wrong - || loses "":
+const message = input || "default message";
+
+// ✅ Correct - ?? keeps "":
+const message = input ?? "default message";
+
+Example 4: API Response
+type ApiResponse = {
+  count: number;         // Could be 0
+  message: string;       // Could be ""
+  data: unknown;         // Could be null
+};
+
+const response = await fetchData();
+
+// Using ??:
+const count = response?.count ?? 0;        // Keeps 0 ✅
+const message = response?.message ?? "N/A";  // Keeps "" ✅
+const data = response?.data ?? null;       // Keeps null ✅
+
+WHEN EACH IS APPROPRIATE
+=======================
+Use || when:
+- You want to catch all falsy values (rarely needed)
+- Working with boolean logic
+
+Use ?? when:
+- You want to provide defaults (most common)
+- You need to preserve 0, "", false as valid
+- Checking for actual missing values
+
+PRODUCTION BEST PRACTICE
+========================
+// User settings object
+type UserSettings = {
+  theme?: string;
+  fontSize?: number;
+  notifications?: boolean;
+};
+
+function applySettings(settings: UserSettings) {
+  // ✅ Using ?? - preserves 0, false, "":
+  const theme = settings.theme ?? "light";
+  const fontSize = settings.fontSize ?? 14;
+  const notifications = settings.notifications ?? true;
+  
+  console.log({theme, fontSize, notifications});
+}
+
+applySettings({ fontSize: 0, notifications: false });
+// Output: { theme: 'light', fontSize: 0, notifications: false }
+// Note: 0 and false are preserved! ✅
+
+COMBINING WITH OPTIONAL CHAINING
+================================
+const user: User | null = getUser();
+
+// Safe access with default:
+const name = user?.name ?? "Unknown";
+const age = user?.profile?.age ?? 18;
+const role = user?.permissions?.role ?? "guest";
+
+LOGICAL AND ASSIGNMENT (&&=) BONUS
+===================================
+// Set value only if it's currently falsy
+let count: number | null = null;
+count ??= 5;  // count becomes 5
+
+let count = 10;
+count ??= 5;  // count stays 10
+
+KEY TAKEAWAYS
+=============
+✅ || checks for ANY falsy value (0, "", false, null, undefined)
+✅ ?? checks for ONLY null and undefined
+✅ Use ?? for defaults (most of the time)
+✅ Use || only for boolean-specific logic
+✅ Combine with optional chaining (?.) for safe defaults 
+
+
+================================================================================
+Section 3: The Typescript Compiler and COnfiguration
+================================================================================
+
+TS config file - created by tsc --init - this will create tsconfig.JSONthis allows you configure TS behavior
+In tsconfig.json>   "target": "esnext", allows you to set where the JS version it will compile
