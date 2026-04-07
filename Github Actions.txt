@@ -1,0 +1,155 @@
+Section1:Getting Started
+ 1.Welcome to the Course
+ 2.What is GitHub Actions?
+ 3.Git, GitHub & GitHub Actions
+ 4.About This Course
+ 5.Join The Discord Community
+ 6.Course Code Attachments & Slides
+ 7.Course Setup
+Section2:Git & GitHub Crash Course [optional]
+ 8.Module Introduction
+ 9.Getting Started with Git
+ 10.Configuring Git
+ 11.Project Setup
+ 12.Working with (Local) Git Repositories
+ 13.Staging Files & Creating Commits
+ 14.Multiple Commits & Checking Out Snapshots
+ 15.Reverting Changes with git revert
+ 16.Resetting Code with git reset
+ 17.Staging Multiple Files & Ignoring with gitignore
+ 18.Understanding Branches
+ 19.Working with Branches
+ 20.Merging Branches
+ 21.GitHub Introduction
+ 22.Creating a GitHub Account
+ 23.Creating a (Remote) GitHub Repository
+ 24.Connecting Local & Remote Repositories
+ 25.Pushing Commits & Understanding Permissions
+ 26.GitHub & Branches
+ 27.Readme Files & Pulling Changes
+ 28.Cloning Repositories
+ 29.Making Changes As A Different User (Non-Owner)
+ 30.GitHub Issues & Collaborators
+ 31.Working with Pull Requests
+ 32.Understanding & Using Forks
+ 33.Module Summary
+Section3:GitHub Actions - Basic Building Blocks & Components
+ 34.Module Introduction
+ 35.Key Components: Workflows, Jobs, Steps & More
+ 36.GitHub Actions: Availability & Pricing
+ 37.Creating a First Workflow
+ 38.Running the First Workflow
+ 39.Running Multi-Line Shell Commands
+ 40.Onwards to a More Realistic Example
+ 41.A New Workflow & The “push” Event
+ 42.Using Actions In Workflows
+ 43.Checking Out Code In Workflows
+ 44.Configuring Actions
+ 45.Adding More Workflow Job Steps
+ 46.Failing Workflows & Analyzing Workflows
+ 47.Adding Multiple Jobs
+ 48.Jobs: In Parallel vs Sequential
+ 49.Using Multiple Triggers (Events)
+ 50.Expressions & Context Objects
+ 51.Module Summary
+ 52.Time to Practice: The Problem
+ 53.Time to Practice: Solution
+Section4:Workflows & Events - Deep Dive
+ 54.Module Introduction
+ 55.Which Events Can You Use?
+ 56.A Demo Project Setup
+ 57.More on the “push” Event
+ 58.Introducing Event Filters & Activity Types
+ 59.Using Activity Types
+ 60.Using Event Filters
+ 61.Special Behavior: Forks & Pull Request Events
+ 62.Cancelling Workflows & Skipping Workflows
+ 63.Module Summary
+Section5:Job Artifacts & Outputs
+ 64.Module Introduction
+ 65.Demo Project Setup
+ 66.Understanding Job Artifacts
+ 67.Artifacts - An Example
+ 68.Uploading Job Artifacts
+ 69.Downloading Artifacts (Manually & Automatically)
+ 70.Understanding Job Outputs
+ 71.Job Outputs - An Example
+ 72.Using Job Outputs In Other Jobs
+ 73.The Need For Dependency Caching
+ 74.Caching Dependencies In Practice
+ 75.Using & Invalidating Caches
+ 76.Module Summary
+Section6:Using Environment Variables & Secrets
+ 77.Module Introduction
+ 78.Project Setup & Understanding Environment Variables
+ 79.Providing Environment Variable Values
+ 80.Demo: Creating a Database & Using Database Environment Variable Values
+ 81.Using Environment Variables in Code & Workflows
+ 82.Default Environment Variables
+ 83.Understanding & Using Secrets
+ 84.Utilizing Repository Environments
+ 85.Module Summary
+Section7:Controlling Workflow & Job Execution
+ 86.Module Introduction
+ 87.Understanding Conditional Steps & Jobs
+ 88.Demo Project Setup
+ 89.Understanding a (Potential) Problem: A Failing Step
+ 90.Controlling Execution via “if”
+ 91.Working with Special Conditional Functions
+ 92.Conditional Jobs
+ 93.More “if” Examples
+ 94.Ignoring Errors & Failures with “continue-on-error”
+ 95.Understanding & Using Matrix Strategies
+ 96.Including & Excluding Values (Matrix Strategy)
+ 97.Saving Time & Code with Reusable Workflows
+ 98.Adding Inputs to Reusable Workflows
+ 99.Reusable Workflows & Secrets
+ 100.Reusable Workflows Outputs
+ 101.Module Summary
+Section8:Jobs & Docker Containers
+ 102.Module Introduction
+ 103.What Are Containers?
+ 104.Why Might You Want To Use Containers (With GitHub Actions)?
+ 105.Demo Project Setup & A Dockerfile
+ 106.Run Jobs In Containers
+ 107.Service Containers - Theory
+ 108.Adding Services (via Service Containers)
+ 109.Communication between Jobs & Service Containers
+ 110.Module Summary
+Section9:Building & Using Custom Actions
+ 111.Module Introduction
+ 112.Why Custom Actions?
+ 113.Understanding Different Types of Custom Actions
+ 114.Demo Project Setup
+ 115.Creating Composite Actions
+ 116.Using Custom Actions In Workflows
+ 117.Adding Inputs to Custom Actions
+ 118.Adding Outputs to Custom Actions
+ 119.Custom JavaScript Actions - Getting Started
+ 120.Configuring JavaScript Projects
+ 121.Adding Basic JavaScript Logic
+ 122.Creating a S3 Bucket (for a more advanced, custom Action)
+ 123.Adding Action Inputs
+ 124.Interacting with GitHub Actions Features
+ 125.Custom JavaScript Action: Real Deployment to AWS S3
+ 126.JavaScript Actions & Outputs
+ 127.Getting Started with a Custom Docker Action
+ 128.Creating a Custom Docker Action
+ 129.Storing Actions In Repositories & Sharing Actions With Others
+ 130.Module Summary
+Section10:Security & Permissions
+ 131.Module Introduction
+ 132.Key Security Concerns
+ 133.Understanding Script Injection Attacks
+ 134.Increasing Actions Safety
+ 135.Understanding Permissions & Potential Issues
+ 136.GITHUB_TOKEN & Managing Permissions
+ 137.More Security Settings
+ 138.Working with Third-Party Permissions & OpenID Connect
+ 139.Example: AWS Permissions
+ 140.Example: AWS Permissions (Continued)
+ 141.More On GitHub Actions Security
+Section11:Wrap Up
+ 142.Congratulations & Wrap Up
+ 143.Bonus Lecture
+

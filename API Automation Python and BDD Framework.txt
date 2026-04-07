@@ -1,0 +1,98 @@
+﻿Section1: What will you learn from this course? - MUST WATCH
+1. FAQ’s about the course
+2. Installing Python library, Pip Client and Pycharm Editor
+3. Important note for MAC Users
+4. Important Note before watching next section
+
+Section2: Learn Python Programming Basics from Scratch
+ 5. Python hello world Program with Basics
+6. Datatypes in python and how to get the Type at run time
+7. List Datatype and its operations to manipulate
+8. Tuple and Dictionary Data types in Python with examples
+9. How to Create Dictionaries at run time and add data into it
+10. If else condition in python with working examples
+11. How loops work in Python and importance of code indentation
+12. Programming examples using for loop - 1
+13. Programming examples using While loop - 2
+14. What are functions? How to use them in Python
+15. OOPS Principles: Classes and objects in Python
+16. What is Constructor and its role in Object oriented programming
+17. Inheritance concepts with examples in Python
+18. Strings and its functions in python
+19. How to read text file content using Python
+20. Importance of readLine and readLines Methods in python
+21. Writing Data into File using Python
+22. Code Download
+Quiz1: Test your Python Basic Knowledge!
+Section3: Read and Write to Json Files and parsing using Python Methods
+ 23. Where to download the code files?
+24. How to Parse Json Strings in Python? - Example
+25. Parse content in Json file into Dictionary - Example
+26. Parsing complex Json with nested Structure and extract values
+27. Compare two Json Schemas using Python Dictionaries with example
+Quiz2: Section 3 Quiz - Test your knowledge!
+Section4: API Automation Testing with Python Requests Library
+ 28. Install Python requests Library for API Automation
+29. Understanding Get http request calls and get response using Json method
+30. Validating response status codes and headers using response object
+31. Understand automating Post http request with Payload and headers
+32. End to end automation flow of API calls using Python
+Section5: Setting up Global Properties and OAuth Mechanism for API Testing
+ 33. Setting global configurations using Python Config object
+34. Optimizing resources and payload from externally as reusable data
+35. Authenticating API's using Python Automation auth method- Example
+36. Section 3-5 Code Download
+Quiz3: Section 4 and 5 Quiz - Test Your API Automation Knowledge!
+Section6: API Testing Request Library Miscellaneous Concepts
+ 37. Importance of Session Managing in API Testing
+38. Send and Manage cookies for API request calls
+39. Time out and Redirection attributes in making request calls
+40. Sending Attachments through Post request call using Files Dictionary object
+41. Code Snippet download
+Section7: Build SQL Utility to interact with Database Tables from Python Code
+ 42. Setting up MYSQL Instance to drive the data from Python Code
+43. Setup Database with the Example Table Data and start Connection
+44. SQL Queries download
+45. Executing Queries on to Database from Python Code
+46. Iterate over database table results set from Python and parse the results
+47. Create Connection utility and pass the SQL connection externally into test
+Quiz4: Section 7 Quiz
+Section8: Integrate Database utilities to API Test for End to end Automation
+ 48. Integrate Database results into API Test Data to build functional flow
+49. Code Download
+Section9: BDD Framework Development for API Automation from Scratch
+ 50. What are the BDD tools we use to Automate in Python Language
+51. Install Behave and download Python Professional edition
+52. Create Step Definition file with auto generated syntaxes and annotations
+53. Implement API Automation actual logic into step Definitions
+54. Implement Hooks for the scenarios by defining environment.py file
+55. Implement Parameterization to the Test Scenarios using Example outline Keywords
+56. Use Tagging mechanism to run selected tests in framework
+57. Best practices to write reusable step definitions code for API test Scenarios
+58. Integrate Tagging and hooks to build generalize BDD code for Python API Tests
+59. Generate Allure reports for Python API BDD Framework
+60. Complete Code Download
+Section10: Read and Write to CSV files with Parsing using Python methods
+ 61. Parsing and reading the CSV files using Python csv package
+62. Building a logic to get the data from CSV based on conditional query
+63. Parsing and writing back to CSV files using Python csv package
+64. Where to download code files?
+Quiz5: Section 9 Quiz
+Section11: Python paramiko Utility to communicate with AWS Linux Servers
+ 65. Setting up AWS Linux EC2 Instance for solving the project
+66. Setting up SSH connection in AWS Linux instances
+67. Install Paramiko Package to establish connection to Servers
+Section12: Execute Batch Jobs on Linux Servers through Python SSH Utilities
+ 68. Execute commands on Linux Servers from your local machine using Python code
+69. SFTP Connection to upload and download from server using Python Paramiko
+70. Example in running batch commands on Linux Servers using Python code
+Quiz6: Section 10 & 11 Quiz
+Section13: Web Scrapping to extract content for DataScience Projects using Python
+ 71. What is Web Scrapping in Python?
+72. Beautiful Soap package for Scrapping the content on web pages
+73. find and findAll methods to parse html content from web pages
+74. Scrapping Sub urls with href attribute concatenation to requests url
+75. End to end example of Web scrapping with Python
+76. Extracting the content from page based on the visible text scrapper
+Quiz7: Section 12 Quiz
+   71.

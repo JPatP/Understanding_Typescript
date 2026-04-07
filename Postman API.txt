@@ -1,0 +1,107 @@
+Section1: Introduction to Postman Tool for Testing APIs in Collections
+Introduction to Postman Tool and its features
+
+
+Important resources information to learn API Basics
+
+
+Section2: Getting Started with Postman Tool with its Setup and Sample Project
+ 3. Install Postman tool and create new Workspace in Postman Account
+ 4. What are Collections in Postman and how to create HTTP requests under it
+ 5. Build Library API requests in Postman tool and validate responses
+ Quiz1: Knowledge Check for Section 2
+Section3: Importance of Postman Variables and Environments for Automation Testing
+ 6. Walk through the Automation Scenarios Scope for the Library APIs
+ 7. What are Environments in Postman? How to create them
+ 8. How to create variables in Postman with different Scopes
+ 9. Getting started with Scripting in the Postman
+ 10. How to dynamically generate values from variables into input Payload requests
+ Quiz2: Knowledge Check on Section 3
+Section4: Postman Scripting Editor Types and Response Assertion Validations
+ 11. Assertions in Postman and how to use that in Scripting window
+ 12. Running set of tests together in the Collection as automated runner
+ 13. Validating JSON response with the input data of other API through Automated code
+ 14. What is JSON Schema and how to validate it with Postman Scripting
+ Quiz3: Knowledge Check on Section 4
+Section5: Data Driven Testing with Postman and Dynamic Workflow Automation
+ 15. Functional logic validations with Postman Scripting Assertions
+ 16. How to perform Data driven testing from CSV to Postman request Scripts
+ 17. How to handle Error handling Scenarios in API tests with Postman
+ 18. How to prepare workflow of Execution Smartly with Postman Scripting
+ 19. Library API Automation Project code download
+Section6: Handling OAuth 2.0 Authenticated Google APIs with Postman
+ 20. Introduction to OAuth 2.0 and different Grant types
+ 21. Understand Grant Type Authorization flow with real time example
+ 22. Flow procedure in achieving OAuth 2.0 Authentication mechanism
+ 23. Details on Practise OAuth 2.0 project to retrieve Courses list
+ 24. API Contract and Code download
+Section7: End to End Example of Parsing Complex Nested JSON Responses
+ 25. Preparing Automation Scripting to grab the Access token into Actual request
+ 26. Learn JavaScript filter, map, reduce functions to parse array
+ 27. How to parse Complex Nested JSON response through JSON object
+ 28. Solving Functional validations by parsing nested JSON through JS functions
+ 29. Retrieving Course titles from Web Automation JSON object through Postman Script
+ 30. OAuth Automation Project code download
+Section8: Mock Servers and Schema Validations with Postman
+ 31. What is JSON Schema? How to validate the given Schema
+ 32. Sample JSON response and Generate Schema from given JSON - Example
+ 33. How to automate the JSON Schema validation through Postman
+ 34. What are Mock servers? Why do we need them in real time projects
+ 35. Create Mock Servers in Postman and create sample examples
+ 36. Functional Mocking Examples through Postman - Part 1
+ 37. Functional Mocking Examples through Postman - Part 2
+Section9: SOAP Web Services Automation through Postman for XML Responses
+ 38. Understand SOAP Web Services to automate through Postman tool
+ 39. Create SOAP Collection to start testing SOAP Web Services in Postman
+ 40. Postman Script to parse SOAP XML responses and validate the data
+ 41. How to parse complete SOAP XML response as string for Assertion validations
+ 42. SOAP Project Automation Code download
+Section10: What is Newman? Importance of Newman for End-to-End API Automation
+ 43. What is Newman and importance of it in Postman Automation Execution
+ 44. How to run Postman scripts from Newman CLI commands
+Section11: Run Postman Automation Tests through Jenkins with HTML Reports
+ 45. Generate Newman HTML execution reports for Postman Script Execution
+ 46. How to install Jenkins and setup in the Local systems
+ 47. Create new Jenkins Job for Postman Automation Framework execution
+ 48. How to create Parameterized Jenkins job to switch environments dynamically
+Section12: Team Collaboration and Version Control Features in Postman
+ 49. How to collaborate with Team members on Postman Workspace
+ 50. How to create Pull requests and review PRs through Postman Tool for your work
+ 51. Quick tips on different options in the Postman Tool Window
+Section13: End to End Ecommerce API Examples (Session Tokens, Attachments)
+ 52. Understand the Working nature of APIs and how to find the contract
+ 53. Create API collection in Postman with Login and Add Product API calls
+ 54. Create Order API with passing the token and Product info from previous API calls
+ 55. Test Cleanup process of deleting Order API and viewing order details
+ 56. Implement Postman Script to dynamically send values into request calls
+ 57. Running the Postman Automation collection and Assignment details
+ 58. Code download
+Section14: Learn GraphQL from Scratch and Testing with Postman
+ 59. What is GraphQL? How different it is from Rest APIs
+ 60. Understanding GraphQL Schema and its Query language
+ 61. Learn how to write GraphQL Queries to Test GraphQL APIs
+ 62. Testing GraphQL Queries with Postman and Explorer
+ 63. What are GraphQL Mutations? How to Test Mutations
+ 64. Test Multiple GraphQL Mutations with Query variables in Postman
+ 65. Code download
+Section15: Project Code Download
+ 66. Download the Code
+Section16: JavaScript Fundamentals for Postman Automation (Optional Learning)
+ 67. Please Note
+ 68. Getting started with Hello World Program in VS Code
+ 69. Understanding Variables and Datatypes in JavaScript
+ 70. What are Loops and Conditional Statements in JavaScript
+ 71. Implementing For and While Loop in JavaScript
+ 72. Arrays and its methods in JavaScript with Detailed examples - Part 1
+ 73. Arrays and its methods in JavaScript with Detailed examples - Part 2
+ 74. JavaScript Array Stream Functions (Filter, Reduce, Map) - Part 1
+ 75. JavaScript Array Stream Functions (Filter, Reduce, Map) - Part 2
+ 76. Sorting JavaScript Arrays with optimized logic
+ 77. What are Functions in JavaScript and its advantages
+ 78. Understanding var, let, const Keywords in JavaScript
+ 79. JavaScript String and its manipulation methods with Examples - Part 1
+ 80. JavaScript String and its manipulation methods with Examples - Part 2
+Section17: Learn API Testing Basics (Optional)
+ 81. Comprehensive 76 minutes video to learn API fundamentals from Scratch
+
+

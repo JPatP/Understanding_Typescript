@@ -1,0 +1,1003 @@
+Play
+10. Module Introduction
+1min
+Start
+11. Using Node.js To Run JavaScript Code
+1min
+Play
+12. Project Setup
+3min
+Play
+13. Working with Types & Exploring Built-in Types
+5min
+Play
+14. Vanilla JavaScript Has Types, Too!
+3min
+Play
+15. Type Inference vs Type Assignment
+3min
+Play
+16. Assigning Types To Function Parameters
+3min
+Play
+17. The "any" Type
+3min
+Play
+18. Understanding Union Types
+2min
+Play
+19. Arrays & Types
+2min
+Play
+20. Advanced Array Types
+2min
+Play
+21. A First Glimpse At Generic Types - Alternative Array Type Declaration
+2min
+Play
+22. Making Sense of Tuples
+3min
+Play
+23. Object Types
+5min
+Play
+24. Tricky: The "Must Not Be Null" Type
+2min
+Play
+25. Flexible Objects with the Record Type
+5min
+Play
+26. Working with Enums
+7min
+Play
+27. Being Specific With Literal Types
+5min
+Play
+28. Type Aliases & Custom Types
+4min
+Play
+29. Function Return Value Types
+3min
+Play
+30. The "void" Type
+1min
+Play
+31. The "never" Type
+3min
+Play
+32. Functions As Types
+9min
+Play
+33. null & undefined - Special Types
+3min
+Play
+34. Inferred null & A First Look At Type Narrowing
+3min
+Play
+35. Forced "Not Null" And Optional Chaining
+5min
+Play
+36. Type Casting
+4min
+Play
+37. The "unknown" Type
+5min
+Play
+38. Optional Values & TypeScript
+3min
+Play
+39. Nullish Coalescing
+6min
+Play
+40. Module Introduction
+1min
+Play
+41. TypeScript Project Setup & Creating a tsconfig.json File
+3min
+Play
+42. Exploring tsconfig Options: Target & Libs
+6min
+Play
+43. Controlling File Input & Emission
+5min
+Play
+44. Configuring Type Checking
+3min
+Start
+45. Configuring Code Quality Checks
+1min
+Start
+46. Example tsconfig.json & Deep Dive
+1min
+Play
+47. Compiling with tsconfig
+1min
+Play
+48. Using TypeScript's Watch Mode
+1min
+Play
+49. Installing Type Packages
+6min
+Play
+50. Module Introduction
+1min
+Start
+51. Using Node.js To Run Compiled JS Code
+1min
+Play
+52. Getting Started & First Steps
+5min
+Play
+53. Creating a First Custom Type
+4min
+Play
+54. Defining a Function with a Union Type Return Value
+4min
+Play
+55. Adding Application Logic
+10min
+Play
+56. Connecting Functions & Passing Values
+4min
+Play
+57. Compilation & Execution
+4min
+Play
+58. Module Introduction
+4min
+Play
+59. "let" and "const"
+7min
+Play
+60. Arrow Functions
+5min
+Play
+61. Default Function Parameters
+2min
+Play
+62. The Spread Operator (...)
+5min
+Play
+63. Rest Parameters
+5min
+Play
+64. Array & Object Destructuring
+5min
+Play
+65. How Code Gets Compiled & Wrap Up
+2min
+Start
+66. Useful Resources & Links
+1min
+Play
+67. Module Introduction
+1min
+Play
+68. What are Classes?
+1min
+Play
+69. Creating a First Class
+6min
+Play
+70. A Useful TypeScript Shortcut & Compiling to JavaScript
+5min
+Play
+71. Making Sense of "public" and "private"
+6min
+Play
+72. Marking Fields as "readonly"
+2min
+Play
+73. Understanding Getters
+4min
+Play
+74. Setting Values with Setters
+5min
+Play
+75. Exploring Static Properties & Methods
+3min
+Play
+76. Understanding Inheritance
+3min
+Play
+77. The "protected" Modifier
+3min
+Play
+78. Making Sense Of Abstract Classes
+4min
+Play
+79. Introducing Interfaces
+2min
+Play
+80. Creating a First Interface
+4min
+Play
+81. Interfaces As Object Types
+2min
+Play
+82. Interfaces vs Type Aliases & Understanding Declaration Merging
+4min
+Start
+83. Using Interfaces To Define Function Types
+1min
+Play
+84. Implementing Interfaces
+3min
+Play
+85. Ensuring Base Types with Interfaces
+2min
+Play
+86. Extending Interfaces
+2min
+Play
+87. How Interfaces Get (Not) Compiled To JavaScript
+1min
+Play
+88. Module Introduction
+1min
+Play
+89. Intersection Types
+5min
+Play
+90. More on Type Guards
+6min
+Play
+91. Discriminated Unions
+5min
+Play
+92. Type Guards via "instanceof"
+3min
+Play
+93. "Outsourcing" Type Guards & Using Type Predicates
+3min
+Play
+94. Function Overloads
+5min
+Play
+95. Working with Function Overloads
+3min
+Play
+96. Making Sense of Index Types
+5min
+Play
+97. Constant Types with "as const"
+3min
+Play
+98. Revisiting the "Record" Type
+2min
+Play
+99. The "satisfies" Keyword
+8min
+Start
+Quiz 1: Advanced Types
+Play
+100. Module Introduction
+1min
+Play
+101. A Generic Type We Already Know
+2min
+Play
+102. Understanding Generic Types
+2min
+Play
+103. Creating & Using a Generic Type
+6min
+Play
+104. Generic Functions & Inference
+5min
+Play
+105. Working with Multiple Generic Parameters
+2min
+Play
+106. Generics & Constraints
+4min
+Play
+107. Constraints & Multiple Generic Types
+3min
+Play
+108. Working with Generic Classes & Interfaces
+2min
+Play
+109. Summary
+1min
+Play
+110. Module Introduction
+1min
+Play
+111. What Is A Linked List?
+2min
+Play
+112. Creating List & Node Classes
+5min
+Play
+113. Making the Class Generic
+3min
+Play
+114. Adding an "add" Method
+7min
+Play
+115. Adding Items More Efficiently
+3min
+Play
+116. Accessing the Data & Compiling + Running the Code
+4min
+Play
+117. Finishing the Linked List
+2min
+Play
+118. Module Introduction
+1min
+Play
+119. Using "typeof"
+5min
+Play
+120. "typeof" & A More Useful Example
+4min
+Start
+121. Another Great Use-case for "typeof"
+1min
+Play
+122. Extracting Keys with "keyof"
+2min
+Play
+123. "keyof" & A More Useful Example
+6min
+Play
+124. Understanding Indexed Access Types
+5min
+Play
+125. Accessing Array Elements with Indexed Access Types
+4min
+Play
+126. Introducing Mapped Types
+8min
+Play
+127. Readonly Types & Optional Mapping
+7min
+Play
+128. Exploring Template Literal Types
+10min
+Play
+129. Introducing Conditional Types
+9min
+Play
+130. Conditional Types - Another Example
+6min
+Play
+131. Making Sense of the "infer" Keyword
+7min
+Play
+132. TypeScript's Got You Covered: Built-in Utility Types
+3min
+Play
+133. Module Introduction
+1min
+Play
+134. What Are Decorators? And ECMAScript Decorators vs Experimental Decorators
+7min
+Play
+135. Exploring Different Types of Decorators
+1min
+Play
+136. Building a First Decorator
+8min
+Play
+137. Building a Class Decorators That Edits a Class
+5min
+Play
+138. Understanding Decorator Code Execution Order
+3min
+Play
+139. Creating a Method Decorator
+4min
+Play
+140. Using Decorators To Solve A Common Problem
+4min
+Play
+141. Implementing A Decorator-based Solution: autobind
+4min
+Play
+142. Replacing Methods with Decorators
+4min
+Play
+143. Introducing the Field Decorator
+5min
+Play
+144. Building Configurable Decorators with Factories
+4min
+Play
+145. Onwards to Experimental Decorators
+1min
+Play
+146. Module Introduction
+2min
+Play
+147. A First Class Decorator
+5min
+Play
+148. Working with Decorator Factories
+2min
+Play
+149. Building More Useful Decorators
+6min
+Play
+150. Adding Multiple Decorators
+3min
+Play
+151. Diving into Property Decorators
+5min
+Play
+152. Accessor & Parameter Decorators
+6min
+Play
+153. When Do Decorators Execute?
+3min
+Play
+154. Returning (and changing) a Class in a Class Decorator
+9min
+Play
+155. Other Decorator Return Types
+4min
+Play
+156. Example: Creating an "Autobind" Decorator
+9min
+Play
+157. Validation with Decorators - First Steps
+7min
+Play
+158. Validation with Decorators - Finished
+12min
+Start
+159. Fixing a Validator Bug
+1min
+Play
+160. Wrap Up
+3min
+Start
+161. Useful Resources & Links
+1min
+Play
+162. Module Introduction
+2min
+Play
+163. Getting Started
+5min
+Play
+164. DOM Element Selection & OOP Rendering
+12min
+Play
+165. Interacting with DOM Elements
+8min
+Play
+166. Creating & Using an "Autobind" Decorator
+5min
+Play
+167. Fetching User Input
+9min
+Play
+168. Creating a Re-Usable Validation Functionality
+14min
+Play
+169. Rendering Project Lists
+11min
+Play
+170. Managing Application State with Singletons
+16min
+Play
+171. More Classes & Custom Types
+7min
+Play
+172. Filtering Projects with Enums
+6min
+Play
+173. Adding Inheritance & Generics
+19min
+Play
+174. Rendering Project Items with a Class
+12min
+Play
+175. Using a Getter
+4min
+Play
+176. Utilizing Interfaces to Implement Drag & Drop
+10min
+Play
+177. Drag Events & Reflecting the Current State in the UI
+6min
+Play
+178. Adding a Droppable Area
+8min
+Play
+179. Finishing Drag & Drop
+7min
+Play
+180. Wrap Up
+1min
+Start
+181. Useful Resources & Links
+1min
+Play
+182. Module Introduction
+1min
+Play
+183. Writing Module Code - Your Options
+3min
+Play
+184. Working with Namespaces
+11min
+Play
+185. Organizing Files & Folders
+9min
+Play
+186. A Problem with Namespace Imports
+3min
+Play
+187. Using ES Modules
+12min
+Start
+188. Configuring tsconfig
+1min
+Play
+189. Understanding various Import & Export Syntaxes
+5min
+Play
+190. How Does Code In Modules Execute?
+2min
+Play
+191. Understanding "type" Imports
+2min
+Play
+192. Wrap Up
+3min
+Start
+193. Useful Resources & Links
+1min
+Play
+194. Module Introduction
+1min
+Play
+195. The Problem With The TypeScript Compiler
+4min
+Play
+196. Building with Webpack or ESBuild
+4min
+Play
+197. Introducing Vite
+2min
+Play
+198. Using Vite
+7min
+Play
+199. Installing TypeScript on a Per-Project Basis
+2min
+Play
+200. Making Sense of .d.ts Files
+3min
+Play
+201. Importing non-TS Files
+2min
+Play
+202. Wrap Up
+1min
+Start
+203. About This Section
+1min
+Play
+204. Module Introduction
+1min
+Play
+205. What is Webpack & Why do we need it?
+6min
+Play
+206. Installing Webpack & Important Dependencies
+4min
+Play
+207. Adding Entry & Output Configuration
+6min
+Play
+208. Adding TypeScript Support with the ts-loader Package
+7min
+Start
+209. Adjust Webpack Config
+1min
+Play
+210. Finishing the Setup & Adding webpack-dev-server
+4min
+Play
+211. Adding a Production Workflow
+4min
+Play
+212. Wrap Up
+2min
+Start
+213. Useful Resources & Links
+1min
+Play
+214. Module Introduction
+1min
+Play
+215. Problem: Using JavaScript (!) Libraries with TypeScript
+4min
+Play
+216. Solution: Installing @types Packages
+5min
+Play
+217. Exploring .d.ts Files
+7min
+Start
+218. Diving Deeper Into .d.ts Files
+1min
+Start
+219. Using "declare" Manually
+1min
+Play
+220. There Are Libraries With Great TypeScript Support!
+2min
+Play
+221. Exploring Zod As a TypeScript-first Library
+8min
+Play
+222. Diving Deeper Into Zod
+4min
+Play
+223. Runtime vs Compile-time Types with Zod
+4min
+Play
+224. Module Introduction
+1min
+Play
+225. Project Setup
+4min
+Play
+226. Getting User Input
+3min
+Play
+227. Setting Up a Google API Key
+3min
+Play
+228. Using Axios to Fetch Coordinates for an Entered Address
+10min
+Play
+229. Rendering a Map with Google Maps (incl. Types!)
+7min
+Start
+230. Working with Maps without a Credit Card
+1min
+Start
+231. Useful Resources & Links
+1min
+Play
+232. Module Introduction
+1min
+Play
+233. Setting Up a React + TypeScript Project
+4min
+Play
+234. Typing Components & Props
+6min
+Play
+235. Using Components & Props
+3min
+Play
+236. The Special "children" Prop & Optional Props
+3min
+Play
+237. Adding Another Components With Props
+4min
+Play
+238. Component Functions & Types - An Alternative
+3min
+Play
+239. Managing State
+2min
+Play
+240. Passing Functions As Props
+5min
+Play
+241. Handling Form Submission
+5min
+Play
+242. Working with Refs
+6min
+Play
+243. More Function Passing & State Updating
+4min
+Start
+244. Fixing a Typo
+1min
+Play
+245. Wrap Up
+1min
+Play
+246. Module Introduction
+1min
+Play
+247. Node & TypeScript: Options & Alternatives
+4min
+Play
+248. Setting up a Project
+7min
+Play
+249. First Server & Working with Node Types
+3min
+Play
+250. Adding & Using Express (+ Types)
+3min
+Play
+251. Managing Data with Help of TypeScript
+8min
+Play
+252. Adding & Testing a First Route
+10min
+Play
+253. Finishing The Basic App
+12min
+Play
+254. Native Node.js TypeScript Support (Without Compilation!)
+7min
+Play
+255. Type Stripping vs Type Transformation
+9min
+Play
+256. Exploring Alternative Runtimes Like Bun
+2min
+Play
+257. Thanks for being part of the course!
+1min
+Start
+258. LEGACY Lectures Below
+1min
+Play
+259. Module Introduction
+1min
+Play
+260. Using Types
+10min
+Play
+261. TypeScript Types vs JavaScript Types
+5min
+Start
+262. Important: Type Casing
+1min
+Play
+263. Working with Numbers, Strings & Booleans
+6min
+Play
+264. Type Assignment & Type Inference
+6min
+Start
+Quiz 2: Understanding Types
+Play
+265. Object Types
+8min
+Start
+266. Nested Objects & Types
+1min
+Play
+267. Arrays Types
+5min
+Play
+268. Working with Tuples
+6min
+Play
+269. Working with Enums
+7min
+Play
+270. The "any" Type
+2min
+Play
+271. Union Types
+7min
+Play
+272. Literal Types
+8min
+Play
+273. Type Aliases / Custom Types
+3min
+Start
+274. Type Aliases & Object Types
+1min
+Start
+Quiz 3: Core Types & Concepts
+Play
+275. Function Return Types & "void"
+7min
+Play
+276. Functions as Types
+6min
+Play
+277. Function Types & Callbacks
+4min
+Start
+Quiz 4: Functions & Types
+Play
+278. The "unknown" Type
+4min
+Play
+279. The "never" Type
+4min
+Play
+280. Wrap Up
+2min
+Start
+281. Useful Resources & Links
+1min
+Start
+282. Where Should You Go Next?
+1min
+Start
+283. LEGACY Lectures Below
+1min
+Play
+284. Module Introduction
+1min
+Play
+285. Using "Watch Mode"
+2min
+Play
+286. Compiling the Entire Project / Multiple Files
+4min
+Play
+287. Including & Excluding Files
+6min
+Play
+288. Setting a Compilation Target
+4min
+Play
+289. Understanding TypeScript Core Libs
+6min
+Play
+290. More Configuration & Compilation Options
+2min
+Play
+291. Working with Source Maps
+2min
+Play
+292. rootDir and outDir
+6min
+Play
+293. Stop Emitting Files on Compilation Errors
+3min
+Play
+294. Strict Compilation
+11min
+Play
+295. Code Quality Options
+4min
+Play
+296. Debugging with Visual Studio Code
+4min
+Play
+297. Wrap Up
+1min
+Start
+298. Useful Resources & Links
+1min
+Start
+299. Where Should You Go Next?
+1min
+Start
+300. LEGACY Lectures Below
+1min
+Play
+301. Module Introduction
+1min
+Play
+302. What are Classes?
+5min
+Play
+303. Creating a First Class
+6min
+Play
+304. Compiling to JavaScript
+3min
+Play
+305. Constructor Functions & The "this" Keyword
+8min
+Play
+306. "private" and "public" Access Modifiers
+6min
+Play
+307. Shorthand Initialization
+3min
+Play
+308. "readonly" Properties
+3min
+Start
+Quiz 5: Class Basics
+Play
+309. Inheritance
+8min
+Play
+310. Overriding Properties & The "protected" Modifier
+3min
+Play
+311. Getters & Setters
+7min
+Play
+312. Static Methods & Properties
+5min
+Play
+313. Abstract Classes
+5min
+Play
+314. Singletons & Private Constructors
+5min
+Play
+315. Classes - A Summary
+2min
+Start
+Quiz 6: Classes
+Play
+316. A First Interface
+4min
+Play
+317. Using Interfaces with Classes
+6min
+Play
+318. Why Interfaces?
+2min
+Play
+319. Readonly Interface Properties
+2min
+Play
+320. Extending Interfaces
+3min
+Play
+321. Interfaces as Function Types
+3min
+Play
+322. Optional Parameters & Properties
+4min
+Play
+323. Compiling Interfaces to JavaScript
+2min
+Start
+Quiz 7: Interfaces
+Play
+324. Wrap Up
+2min
+Start
+325. Useful Resources & Links
+1min
+Start
+326. Where Should You Go Next?
+1min
+Start
+327. LEGACY Lectures Below
+1min
+Play
+328. Module Introduction
+1min
+Play
+329. Built-in Generics & What are Generics?
+9min
+Play
+330. Creating a Generic Function
+9min
+Play
+331. Working with Constraints
+4min
+Play
+332. Another Generic Function
+6min
+Play
+333. The "keyof" Constraint
+3min
+Play
+334. Generic Classes
+9min
+Play
+335. A First Summary
+1min
+Play
+336. Generic Utility Types
+7min
+Play
+337. Generic Types vs Union Types
+4min
+Start
+Quiz 8: Generics
+Start
+338. Useful Resources & Links
+1min

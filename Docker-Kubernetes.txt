@@ -1,0 +1,288 @@
+Section1:Getting Started
+ 1.Welcome to the Course
+ 2.What is Docker?
+ 3.Why Docker & Containers?
+ 4.Join Our Learning Community
+ 5.Virtual Machines vs Docker Containers
+ 6.Docker Setup - Overview
+ 7.Docker Setup - macOS
+ 8.Docker Setup - Windows
+ 9.Docker Setup - Docker Toolbox for Older Systems
+ 10.Docker Playground
+ 11.An Overview of the Docker Tools
+ 12.Installing & Configuring an IDE
+ 13.Getting Our Hands Dirty!
+ 14.Course Outline
+ 15.How To Get The Most Out Of This Course
+ 16.Course Resources
+ 17.Course Setup
+Section2:Docker Images & Containers: The Core Building Blocks
+ 18.Module Introduction
+ 19.Images & Containers: What and Why?
+ 20.Using & Running External (Pre-Built) Images
+ 21.Our Goal: A NodeJS App
+ 22.Building Our Own Image with a Dockerfile
+ 23.Running a Container based on our own Image
+ 24.EXPOSE & A Little Utility Functionality
+ 25.Images are Read-Only!
+ 26.Understanding Image Layers
+ 27.A First Summary
+ 28.Quiz 1: Images & Containers
+ 29.Managing Images & Containers
+ 30.Stopping & Restarting Containers
+ 31.Understanding Attached & Detached Containers
+ 32.Attaching to an already-running Container
+ 33.Entering Interactive Mode
+ 34.Deleting Images & Containers
+ 35.Removing Stopped Containers Automatically
+ 36.A Look Behind the Scenes: Inspecting Images
+ 37.Copying Files Into & From A Container
+ 38.Naming & Tagging Containers and Images
+ 39.Assignment 1: Time to Practice: Images & Containers
+ 40.Sharing Images - Overview
+ 41.Pushing Images to DockerHub
+ 42.Pulling & Using Shared Images
+ 43.Quiz 2: Managing Images & Containers
+ 44.Module Summary
+ 45.Module Resources
+Section3:Managing Data & Working with Volumes
+ 46.Module Introduction
+ 47.Understanding Data Categories / Different Kinds of Data
+ 48.Analyzing a Real App
+ 49.Building & Understanding the Demo App
+ 50.Understanding the Problem
+ 51.Introducing Volumes
+ 52.A First, Unsuccessful Try
+ 53.Named Volumes To The Rescue!
+ 54.Removing Anonymous Volumes
+ 55.Getting Started With Bind Mounts (Code Sharing)
+ 56.Bind Mounts - Shortcuts
+ 57.Combining & Merging Different Volumes
+ 58.A NodeJS-specific Adjustment: Using Nodemon in a Container
+ 59.Volumes & Bind Mounts Summary
+ 60.Quiz 3: Volumes & Bind Mounts
+ 61.A Look at Read-Only Volumes
+ 62.Managing Docker Volumes
+ 63.Using "COPY" vs Bind Mounts
+ 64.Don’t COPY Everything: Using .dockerignore Files
+ 65.Adding more to the .dockerignore File
+ 66.Working with Environment Variables & .env Files
+ 67.Environment Variables & Security
+ 68.Using Build Arguments (ARG)
+ 69.Module Summary
+ 70.Module Resources
+Section4:Networking: (Cross-)Container Communication
+ 71.Module Introduction
+ 72.Case 1: Container to WWW Communication
+ 73.Case 2: Container to Local Host Machine Communication
+ 74.Case 3: Container to Container Communication
+ 75.Analyzing the Demo App
+ 76.Creating a Container & Communicating to the Web (WWW)
+ 77.Making Container to Host Communication Work
+ 78.Container to Container Communication: A Basic Solution
+ 79.Introducing Docker Networks: Elegant Container to Container Communication
+ 80.How Docker Resolves IP Addresses
+ 81.Quiz 4: Docker Container Communication & Networks
+ 82.Docker Network Drivers
+ 83.Module Summary
+ 84.Module Resources
+Section5:Building Multi-Container Applications with Docker
+ 85.Module Introduction
+ 86.Our Target App & Setup
+ 87.Dockerizing the MongoDB Service
+ 88.Dockerizing the Node App
+ 89.Moving the React SPA into a Container
+ 90.Adding Docker Networks for Efficient Cross-Container Communication
+ 91.Fixing MongoDB Authentication Errors
+ 92.Adding Data Persistence to MongoDB with Volumes
+ 93.Volumes, Bind Mounts & Polishing for the NodeJS Container
+ 94.Live Source Code Updates for the React Client with Bind Mounts
+ 95.Module Summary
+ 96.Module Resources
+Section6:Docker Compose: Elegant Multi-Container Orchestration
+ 97.Module Introduction
+ 98.Docker-Compose: What & Why?
+ 99.Creating a Compose File
+ 100.Diving into the Compose File Configuration
+ 101.Installing Docker Compose on Linux
+ 102.Docker Compose Up & Down
+ 103.Working with Multiple Containers
+ 104.Adding Another Container
+ 105.Building Images & Understanding Container Names
+ 106.Quiz 5: Docker Compose
+ 107.Module Summary
+ 108.Module Resources
+Section7:Working with Utility Containers & Executing Commands
+ 109.Module Introduction & What are "Utility Containers"?
+ 110.Utility Containers: Why would you use them?
+ 111.Different Ways of Running Commands in Containers
+ 112.Building a First Utility Container
+ 113.Utilizing ENTRYPOINT
+ 114.Using Docker Compose
+ 115.Utility Containers, Permissions & Linux
+ 116.Module Summary
+ 117.Module Resources
+Section8:A More Complex Setup: A Laravel & PHP Dockerized Project
+ 118.Module Introduction
+ 119.The Target Setup
+ 120.Adding a Nginx (Web Server) Container
+ 121.Adding a PHP Container
+ 122.Adding a MySQL Container
+ 123.Adding a Composer Utility Container
+ 124.Creating a Laravel App via the Composer Utility Container
+ 125.Fixing Errors With The Next Lecture
+ 126.Launching Only Some Docker Compose Services
+ 127.Adding More Utility Containers
+ 128.Docker Compose with and without Dockerfiles
+ 129.Bind Mounts and COPY: When To Use What
+ 130.Module Resources
+Section9:Deploying Docker Containers
+ 131.Module Introduction
+ 132.From Development To Production
+ 133.Deployment Process & Providers
+ 134.Getting Started With An Example
+ 135.Bind Mounts In Production
+ 136.Introducing AWS & EC2
+ 137.Connecting to an EC2 Instance
+ 138.Important: Installing Docker on a Virtual Machine
+ 139.Installing Docker on a Virtual Machine
+ 140.Installing Docker on Linux in General
+ 141.Pushing our local Image to the Cloud
+ 142.Running & Publishing the App (on EC2)
+ 143.Managing & Updating the Container / Image
+ 144.Disadvantages of our Current Approach
+ 145.From Manual Deployment to Managed Services
+ 146.Important: AWS, Pricing and ECS
+ 147.Deploying with AWS ECS: A Managed Docker Container Service
+ 148.More on AWS
+ 149.Updating Managed Containers
+ 150.Preparing a Multi-Container App
+ 151.Configuring the NodeJS Backend Container
+ 152.Deploying a Second Container & A Load Balancer
+ 153.Using a Load Balancer for a Stable Domain
+ 154.Using EFS Volumes with ECS
+ 155.Our Current Architecture
+ 156.Databases & Containers: An Important Consideration
+ 157.Moving to MongoDB Atlas
+ 158.Using MongoDB Atlas in Production
+ 159.Our Updated & Target Architecture
+ 160.Understanding a Common Problem
+ 161.Creating a “build-only” Container
+ 162.Introducing Multi-Stage Builds
+ 163.Building a Multi-Stage Image
+ 164.Deploying a Standalone Frontend App
+ 165.Development vs Production: Differences
+ 166.Understanding Multi-Stage Build Targets
+ 167.Beyond AWS
+ 168.Module Summary
+ 169.Module Resources
+Section10:Docker & Containers - A Summary
+ 170.Module Introduction
+ 171.Images & Containers
+ 172.Key Commands
+ 173.Data, Volumes & Networking
+ 174.Docker Compose
+ 175.Local vs Remote
+ 176.Deployment
+ 177.Module Resources
+Section11:Getting Started with Kubernetes
+ 178.Module Introduction
+ 179.More Problems with Manual Deployment
+ 180.Why Kubernetes?
+ 181.What Is Kubernetes Exactly?
+ 182.Kubernetes: Architecture & Core Concepts
+ 183.Kubernetes will NOT manage your Infrastructure!
+ 184.A Closer Look at the Worker Nodes
+ 185.A Closer Look at the Master Node
+ 186.Important Terms & Concepts
+ 187.Quiz 6: Kubernetes Core Concepts
+ 188.Module Resources
+Section12:Kubernetes in Action - Diving into the Core Concepts
+ 189.Module Introduction
+ 190.Kubernetes does NOT manage your Infrastructure
+ 191.Kubernetes: Required Setup & Installation Steps
+ 192.macOS Setup
+ 193.Windows Setup
+ 194.Understanding Kubernetes Objects (Resources)
+ 195.The Deployment Object (Resource)
+ 196.A First Deployment - The Imperative Approach
+ 197.Behind The Scenes
+ 198.The Service Object (Resource)
+ 199.Exposing a Deployment with a Service
+ 200.Restarting Containers
+ 201.Scaling in Action
+ 202.Updating Deployments
+ 203.Deployment Rollbacks & History
+ 204.The Imperative vs The Declarative Approach
+ 205.Creating a Deployment Configuration File (Declarative Approach)
+ 206.Adding Pod and Container Specs
+ 207.Working with Labels & Selectors
+ 208.Creating a Service Declaratively
+ 209.Updating & Deleting Resources
+ 210.Multiple vs Single Config Files
+ 211.More on Labels & Selectors
+ 212.Liveness Probes
+ 213.A Closer Look at Configuration Options
+ 214.Summary
+ 215.Module Resources
+Section13:Managing Data & Volumes with Kubernetes
+ 216.Module Introduction
+ 217.Starting Project & What We Know Already
+ 218.Kubernetes & Volumes - More Than Docker Volumes
+ 219.Kubernetes Volumes: Theory & Docker Comparison
+ 220.Creating a New Deployment & Service
+ 221.Getting Started with Kubernetes Volumes
+ 222.A First Volume: The “emptyDir” Type
+ 223.A Second Volume: The “hostPath” Type
+ 224.Understanding the “CSI” Volume Type
+ 225.From Volumes to Persistent Volumes
+ 226.Defining a Persistent Volume
+ 227.Creating a Persistent Volume Claim
+ 228.Using a Claim in a Pod
+ 229.Volumes vs Persistent Volumes
+ 230.Using Environment Variables
+ 231.Environment Variables & ConfigMaps
+ 232.Module Summary
+ 233.Module Resources
+Section14:Kubernetes Networking
+ 234.Module Introduction
+ 235.Starting Project & Our Goal
+ 236.Creating a First Deployment
+ 237.Another Look at Services
+ 238.Multiple Containers in One Pod
+ 239.Pod-internal Communication
+ 240.Creating Multiple Deployments
+ 241.Pod-to-Pod Communication with IP Addresses & Environment Variables
+ 242.Using DNS for Pod-to-Pod Communication
+ 243.Which Approach Is Best?
+ 244.Important Hint: Create a tasks.txt File
+ 245.Challenge Solution
+ 246.Adding a Containerized Frontend
+ 247.Deploying the Frontend with Kubernetes
+ 248.Using a Reverse Proxy for the Frontend
+ 249.Module Summary
+ 250.Module Resources
+Section15:Kubernetes - Deployment (AWS EKS)
+ 251.Module Introduction
+ 252.Deployment Options & Steps
+ 253.AWS EKS vs AWS ECS
+ 254.Preparing the Starting Project
+ 255.A Note on AWS EKS Pricing
+ 256.Diving Into AWS
+ 257.Creating & Configuring the Kubernetes Cluster with EKS
+ 258.Adding Worker Nodes
+ 259.Applying Our Kubernetes Config
+ 260.Getting Started with Volumes
+ 261.Adding EFS as a Volume with the CSI Volume Type
+ 262.Creating a Persistent Volume for EFS
+ 263.Using the EFS Volume
+ 264.A Challenge!
+ 265.Challenge Solution
+ 266.Module Resources
+Section16:Roundup & Next Steps
+ 267.You Learned A Lot!
+ 268.Related Topics You Could Explore
+ 269.Next Steps!
+ 270.Course Roundup
+ 271.Bonus
+

@@ -1,0 +1,114 @@
+﻿Section1:Introduction
+ 1.What is Playwright and why choose Python as library?
+2.How course curriculum is designed from Scratch(Must watch)
+Section2:Setting up Python & Playwright & Pycharm in Windows & Mac
+ 3.Install and set the path of Python in windows OS
+4.Install and set the path of Python in MAC OS
+5.What is PIP? Install Playwright and set it up in Pycharm IDE
+Section3:Learn Python basics from scratch with examples
+ 6.Download code
+7.Python hello world Program with Basics
+8.Datatypes in python and how to get the Type at run time
+9.List Datatype and its operations to manipulate
+10.Tuple and Dictionary Data types in Python with examples
+11.If else condition in python with working examples
+12.How to Create Dictionaries at run time and add data into it
+13.How loops work in Python and importance of code indentation
+14.Programming examples using for loop-1
+15.Programming examples using While loop-2
+16.What are functions? How to use them in Python
+17.OOPS Principles:Classes and objects in Python
+18.What is Constructor and its role in Object oriented programming
+19.Inheritance concepts with examples in Python
+20.Strings and its functions in python
+21.How to read text file content using Python
+22.Importance of readLine and readLines Methods in python
+23.Writing Data into File using Python
+CodingExercises
+ 1.Understand how to manipulate strings and print them
+2.Variable Assignment and Types
+3.Working with Lists
+4.Exploring Tuples
+5.Understanding Dictionaries
+6.Practice using if-else statements
+7.Number Comparison
+8.Doubling Numbers with For Loop
+9.Customized Greeting Based on Time of Day
+10.Understanding class creation in Python
+11.Create a Greeting function
+12.Average Calculator
+13.Read and Print File Contents
+14.Count Lines in a File
+15.Shopping Cart Validation
+16.Handle Tuple modification exception with Try Catch
+Section4:Learn Pytest Framework basics from Scratch
+ 24.Download complete Playwright course code as zip file
+25.What are pytest fixtures and how it help in enhancing tests
+26.Understand scopes in Pytest fixtures with examples
+27.Setup and teardown setup using Python fixtures with yield keyword
+Section5:Getting Started with Playwright Automation Testing-Real time examples
+ 28.Run Pytest Tests from terminal with commands and options
+29.Understand launching the Chromium Engine browser with Playwright fixture
+30.Understand how Page and playwright fixtures work with references
+31.Identify web components using getLabel and get_by_role methods in playwright
+32.Limitations on get_by_Label.Understand in which cases it works
+Quiz1:on Section-5
+Section6:Deep Dive into Playwright UI Methods with real time examples
+ 33.How Autowait works in Playwright to handle wait mechanisms
+34.How to run tests in firefox browser with Playwright-example
+35.Understand how filter works on dynamic selection of card items from the list
+36.How to handle child windows and tabs with playwright-example
+37.Apply Python string methods to retrieve the values with assertion checks
+Section7:UI Functional validations with assertions using Playwright python
+ 38.Invisible,visible inbuilt assertions with Playwright python
+39.How to handle Alerts,popups using Playwright python-Example
+40.What are Frames?How to handle them with Playwright
+41.Prepare strategy to handle web tables automation with an example
+42.End to end example on handling tables,hover methods in playwright
+43.Record and play back the tests in playwright with codegen tool
+Quiz2:Quiz on Section-6
+Section8:Learn API Testing using Playwright with Hybrid e2e example
+ 44.Introduction to ecommerce domain and scenarios to automate
+45.Understand API’s used and their details from developer tools of browser
+46.Build API Utils from Scratch starting with how to make a Post calls
+47.How to assert API responses and status codes with Playwright code
+48.Refactor API Utils methods and call them from Tests in generating data
+49.Dynamically find the order Id from the order History table with easy logic
+Section9:Intercepting Network requests & responses to test Edge cases
+ 50.What is the concept of intercepting network.Understand from example
+51.Intercepting response calls with route->fulfil methods to test edge cases
+52.Intercepting request calls with route->continue methods to test edge cases
+53.Save and inject the session cookies into browser at run time with playwright
+Section10:Playwright Pytest Framework-Part1(Pageobject,Data)
+ 54.Overview of the Best practices for Playwright framework design
+55.Drive the test data externally from Json files into Playwright fixtures
+56.Parameterize the Test with multiple data sets with python dictionaries
+57.Understand the page object design pattern and how to apply for the tests
+58.Implement Page object design to end to end test-example
+59.Optimize Test by avoiding object creation in tests and move into PO classes
+Section11:Playwright Pytest Framework-Part2(Global config,Parallelization,Reports)
+ 60.How to configure and drive global run time variables into Playwright framework
+61.Understand how browser value is decided at run time with global value and ifelse
+62.Running selected tests in the framework with pytest tag annotations
+63.Running tests in playwright framework in parallel and sequence modes
+64.Generate HTML reports with pytest plugin for tests in framework
+65.Playwright Trace viewer-to generate logs,screenshots of the tests in zip file
+Section12:Playwright Pytest Framework-Part3(Cucumber BDD,CI/CD Jenkins,Automation)
+ 66.Introduction to BDD framework and how Pytest framework compliment it
+67.Install pytest plugin and build gherkin feature file for test implementation
+68.Implement Pytest Step definition implementation for the feature file
+69.How to share data across multiple step methods within step definition file
+70.Fix the issues and Run the Pytest BDD tests end to end from terminal
+71.Set up the Jenkins with required configurations from scratch
+72.Create Jenkins parameterized Job to run Playwright Python Framework
+73.Schedule CI/CD Jenkins job to auto trigger based on reg ex expression
+Section13:AI power at Terminal to work on the Playwright Framework-Claude code
+ 74.What is Claude Code & How to integrate with in Pycharm to use the power of AI
+75.Ask anything about the Python project-Get your answers with Claude Code
+76.Brief overview on MCP & integration of MCP to claude code for browser automation
+77.Setting up Playwright MCP Server with in Terminal using Claude code
+78.Demo of test automation with manual steps as input to claude code Playwright MCP
+Section14:Most commonly asked Python and Pytest Programming Interview Questions
+ 79.How the Interview questions video is designed?
+80.Questions list with Timestamp
+81.75Mins In detail discussion on most commonly asked Python Interview Questions

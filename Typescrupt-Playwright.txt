@@ -1,0 +1,165 @@
+Section 1: Introduction to Playwright Automation & Course Expectations
+Introduction to Playwright and its features
+How this Course is designed – Topics Breakup
+Install Node.js & Visual Studio for setting up Playwright Environment
+Section 2: 3 Hours of JavaScript Fundamentals Including Coding Exercises
+ 4. Action plan to complete JavaScript learning
+Section 3: Getting Started with Playwright Automation Core Concepts
+ 5. Download the complete course code as zip file
+ 6. Create npm Project and install Playwright dependencies for testing
+ 7. npm Error in PowerShell (for Windows Users)
+ 8. Importance of Playwright Test Annotation and async/await understanding
+ 9. What is browser context and Page fixtures in Playwright – Example
+ 10. Importance of Playwright configuration file and its details to run the tests
+ 11. Setup Assertions in Playwright tests & multiple browsers Configuration
+ Role Play 1: Ace Your Playwright Technical Interview
+Section 4: Playwright Basic Methods for Web Automation Testing with Examples
+ 12. Locators supported by Playwright and how to type into elements on page
+ 13. Extracting text from browser and inserting valid expect assertions in test
+ 14. How to work with locators which extract multiple web elements in a page
+ 15. Understanding how wait mechanism works if list of elements are returned
+ 16. Techniques to wait dynamically for new page in service-based applications
+ 17. Code download
+ Quiz 1: Test your knowledge of Section 4
+Section 5: Handling UI Components (Dropdowns, Radio Buttons, etc.)
+ 18. Handling static Select dropdown options with Playwright
+ 19. Selecting radio buttons, checkboxes and implementing expect assertions
+ 20. Using async/await with Assertions and understanding attribute validation
+ 21. Handling Child windows & Tabs with Playwright by switching browser context
+ 22. Difference between textContent() & valueInput() methods in Playwright – Example
+ 23. Code download
+ Quiz 2: Test your knowledge of Section 5
+Section 6: Learn Playwright Inspectors, Trace Viewers & Codegen Tools with Demos
+ 24. What is Playwright Inspector? How to debug the Playwright script
+ 25. Codegen tool to record & playback with generated automation script
+ 26. Detailed view of Test Traces, HTML reports, logs & screenshots for test results
+Section 7: End-to-End Web Automation Practice Exercise with Playwright
+ 27. Demo of the Application and Test Scenarios to be automated
+ 28. Write the Script to dynamically find the product to buy from list of products
+ 29. Add assertions for actions performed and implement necessary sync steps
+ 30. Handling Auto-suggestive dropdown options with Playwright – Example
+ 31. Important Note
+ 32. Complete E2E flow of placing the order and grabbing Order ID with Playwright
+ 33. Download Code
+ 34. Dynamically find the order from Order History page using Playwright Script logic
+ 35. End-to-End code discussed in the Section for reference
+ Quiz 3: Quiz on Section 7
+Section 8: Playwright Unique GetBy Locators for Smart Testing & Test Runner
+ 36. Understand how GetByLabel & Playwright UI Runner works – Example
+ 37. Filtering elements with GetByRole, GetByText and chaining methods in steps
+ 38. Code download
+ 39. Understand when GetByLabel can be used to enter into edit boxes
+ 40. Rewrite end-to-end test with GetByRole and GetByText conjunction with Filter logic
+ 41. Code download
+ 42. Strategy on handling Calendar automation using Playwright
+ 43. End-to-end example of validating Calendars with assertions in Playwright
+ 44. Code download
+ Quiz 4: Quiz on Section 8
+Section 9: Handling Web Dialogs, Frames & Event Listeners with Playwright
+ 45. How to validate if element is hidden or displayed using Expect assertions
+ 46. How to automate Java/JavaScript Alert popups with Playwright
+ 47. How to handle and automate Frames with Playwright – Example
+Section 10: API Testing with Playwright & Building Mix of Web and API Tests
+ 48. Understanding the importance of API integration calls for Web tests
+ 49. Playwright request method to make API calls and grab response – Example
+ 50. Parsing API response and passing token to browser local storage with Playwright
+ 51. Place Order API to create order and bypass flow in UI with mix of Web/API
+ 52. End-to-end validation with mix of API and Web concepts – Reduce test time
+ 53. Important Prerequisite before next videos
+ 54. Refactor API calls from utils folder and isolate from Web test logic
+ 55. Refactor API calls – Part 2 (utils folder isolation)
+ 56. Code download for APIUtils file
+ 57. Code download for WebAPIPart1 file
+Section 11: Session Storage & Intercepting Network Requests/Responses
+ 58. How to save session storage using Playwright and inject into new browser context
+ 59. How to debug API steps in script using Visual Code debugging
+ 60. Detailed view of Trace viewer to understand API logging requests/responses
+ 61. How to intercept Network response calls with Playwright route method
+ 62. Understand Playwright route method and its parameters – Demo
+ 63. Code download
+ 64. Intercept Network request calls with Playwright – Example demo
+ 65. Code download
+ 66. How to abort Network calls with Playwright – Examples
+Section 12: Perform Visual Testing with Playwright Algorithms
+ 67. Capture Screenshots with Playwright on page & partial Element level – Demo
+ 68. What is Visual Testing and how to perform it using Playwright
+Section 13: Build Excel Utils and Drive Uploads/Downloads using Playwright
+ 69. Important Note
+ 70. Introduction to excelJS node module and setting up JS Project
+ 71. Traversing rows and columns of excel worksheet with excelJS library
+ 72. Build Util functions to read and update excel files strategically
+ 73. Update data from excel based on filter search criteria
+ 74. Strategy to handle download and upload files strategically
+ 75. End-to-end example for excel edits and assertions with Playwright
+ 76. Code download
+Section 14: Page Object Patterns & Data-Driven Parameterization for Playwright
+ 77. Important Prerequisite before going through this section
+ 78. What is Page Object Pattern and its importance
+ 79. Creating Page Objects and action methods for end-to-end Script – Part 1
+ 80. Creating Page Objects and action methods for end-to-end Script – Part 2
+ 81. Assignment Solution – Converting Page Object Model Project
+ 82. Drive data from external JSON files to Playwright tests
+ 83. Implement parameterization in tests with different data sets
+ 84. Pass test data as fixture by extending test annotation behavior
+Section 15: Project Configurations & Config Options for Robust Framework
+ 85. Fix with AI Button – Let LLM Models handle why your tests are failing
+ 86. Various options in use property & setting up project configurations
+ 87. Viewport property on emulating browser to mobile devices with Playwright
+ 88. Screenshots, Traces & SSL certification options in Config file
+Section 16: Test Retries, Serial & Parallel Execution and Tagging Tests in Playwright
+ 89. Fix flaky tests with test retry option in Playwright config file
+ 90. Understand how Playwright runs tests in serial & parallel mode and update setting
+ 91. Run tests in parallel from same file by extending test option behavior
+ 92. Reason for test failures – Race conditions & fix them
+ 93. Tag tests and control execution from command line parameters
+Section 17: HTML & Allure Reporting and CI/CD Jenkins Integration
+ 94. Generate HTML & Allure Reports for Playwright Framework tests
+ 95. Create custom scripts to trigger tests from package.json file
+ 96. Install and configure Jenkins
+ 97. Integrate Playwright framework with Jenkins and create parameterized jobs
+Section 18: Understand TypeScript Basics and Refactor Playwright Framework
+ 98. Important Note
+ 99. Understand the differences between TypeScript and JavaScript
+ 100. Deep dive into TypeScript type syntaxes and their usage – Part 1
+ 101. Deep dive into TypeScript type syntaxes and their usage – Part 2
+ 102. Build Playwright PageObject TypeScript files and enforce typing standards
+ 103. Build Playwright Utility TypeScript files and enforce typing standards
+ 104. Refactor Playwright tests into TypeScript and run E2E Test
+Section 19: Playwright Cucumber Framework Integration with its Features
+ 105. What is Cucumber Framework and how it fits in Playwright
+ 106. Configure and setup Cucumber feature files into Playwright Project
+ 107. Create Step Definition files and associate with Cucumber.js config file
+ 108. Implement Code Login into Step Definition and run Cucumber feature files
+ 109. World Constructor – Usage in Playwright Cucumber
+ 110. Understand Cucumber Hooks and their implementation in Framework
+ 111. Implement Cucumber Tags for features and demo on Tagged Hooks to filter
+ 112. Parameterization with Scenario Outline & run tests in parallel Playwright
+ 113. Generate HTML Reports for Cucumber Playwright & rerun failed scenarios
+Section 20: E2E Playwright DevOps Solution Using Azure Cloud Parallel Execution
+ 114. Introduction to Azure & Playwright Cloud Workspace Resource Creation
+ 115. Run tests in parallel in Azure Cloud hosted browsers using commands
+ 116. Intro to Azure CI/CD Pipelines & setting up Playwright repo in cloud
+ 117. Azure CI/CD pipelines.yml file download
+ 118. Running Playwright CI/CD pipelines with detailed .yml understanding
+Section 21: Course Code Download
+ 119. Code download
+Section 22: Playwright Agents & MCP – Spin up AI Agents inside VS Code
+ 120. Gen AI Integration to Playwright Framework using GitHub Copilot plugin
+ 121. What is MCP and how Playwright MCP helps build AI Agent
+ 122. Use AI Agent mode to create new Playwright tests & execute them with prompting
+ 123. Playwright inbuilt Agents – How they work under the hood
+ 124. Set up Playwright Agents & understand Chat mode options with roles
+ 125. Use Planner & Generator Agent to create Test plan and build associated script
+ 126. Healing Agent – Repair failed tests generated by Generator Agent
+Section 23: Most Commonly Asked JavaScript Programming Interview Questions
+ 127. How the Interview Questions video is designed
+ 128. Questions list with timestamp
+ 129. 75-minute discussion on JavaScript Interview Questions
+Section 24: Appendix – Learn JavaScript Fundamentals from Scratch for Automation
+ 130. Important Info about this Section
+ 131. Complete 3-hour JavaScript Tutorial for Automation Testing
+ Coding Exercise 1: Test your JavaScript Array Knowledge
+ Coding Exercise 2: Manipulate an Array of Strings (add, remove, sort)
+ Coding Exercise 3: Apply Transformations and Calculations to Array Elements and Filter Results
+
+
